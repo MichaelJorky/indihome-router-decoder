@@ -16,29 +16,34 @@ git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 6. Instal pycryptodomex 
 python -m pip install pycryptodome (optional)
 python -m pip install pycryptodomex (optional)
+atau
 python pip3 install pycryptodome
 python pip3 install pycryptodomex
 
 7. Intsal setuptools
 python -m pip install setuptools (optional)
+atau
 python pip3 install setuptools
 
 8. Instal selenium
 python -m pip install selenium (wajib)
+atau
 python pip3 install selenium
 
 9. Pindahkan config.bin ke folder .zte-decoder
 
 9. Jalankan script python
-Buka cmd lalu ketik perintah .zte-decoder
+Buka git cmd lalu ketik perintah cd .zte-decoder
 
-python decode.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
-python decode.py --model "F670L" --serial ZTE123456789 config.bin config.xml
-python decode.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
-python decode.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
-python decode.py --mac AA:BB:CC:DD:EE:FF config.bin config.xml
-python decode.py --serial ZTE123456789 config.bin config.xml
-python decode.py --key 'Telkomdso123' config.bin config.xml
-python decode.py --model "F670L" config.bin config.xml
+10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial numbernya maupun mac addressnya
+
+python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
+python decoder.py --model "F670L" --serial ZTE123456789 config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF config.bin config.xml
+python decoder.py --serial ZTE123456789 config.bin config.xml
+python decoder.py --key 'Telkomdso123' config.bin config.xml
+python decoder.py --model "F670L" config.bin config.xml
 ---------------------------------------------------------------
 Subscribe: https://www.youtube.com/@DuniaMR?sub_confirmation=1
