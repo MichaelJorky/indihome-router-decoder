@@ -21,7 +21,7 @@ python pip3 install pycryptodomex
 
 7. Intsal setuptools
 python -m pip install setuptools (optional)
-pip3 install setuptools
+python pip3 install setuptools
 
 8. Instal selenium
 python -m pip install selenium (wajib)
