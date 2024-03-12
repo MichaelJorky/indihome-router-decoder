@@ -38,12 +38,20 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial numbernya maupun mac addressnya
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
-python decoder.py --model "F670L" --serial ZTE123456789 config.bin config.xml
 python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
-python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'Telkomdso123' config.bin config.xml
 python decoder.py --mac AA:BB:CC:DD:EE:FF config.bin config.xml
-python decoder.py --serial ZTE123456789 config.bin config.xml
-python decoder.py --key 'Telkomdso123' config.bin config.xml
+python decoder.py --model "F670L" --serial ZTE123456789 config.bin config.xml
+python decoder.py --model "F670L" --key 'Telkomdso123' config.bin config.xml
+python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config.bin config.xml
 python decoder.py --model "F670L" config.bin config.xml
+python decoder.py --serial ZTE123456789 config.bin config.xml
+python decoder.py --serial ZTE123456789 --key 'Telkomdso123' config.bin config.xml
+python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --key 'Telkomdso123' config.bin config.xml
+python decoder.py --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py config.bin config.xml
 ---------------------------------------------------------------
 Subscribe: https://www.youtube.com/@DuniaMR?sub_confirmation=1
