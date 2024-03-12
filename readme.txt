@@ -11,7 +11,7 @@ https://www.python.org/downloads/
 https://git-scm.com/downloads
 
 5. Jalankan Git CMD (run as administrator)
-git clone https://github.com/mkst/zte-config-utility .zte-decoder
+git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 6. Instal pycryptodomex 
 python -m pip install pycryptodome (optional)
