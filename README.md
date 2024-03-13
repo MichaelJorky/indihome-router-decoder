@@ -14,9 +14,11 @@ https://www.python.org/downloads/
 https://git-scm.com/downloads
 
 5. Jalankan Git CMD (run as administrator)
+
 git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 7. Instal pycryptodomex 
+
 python -m pip install pycryptodome (optional)
 python -m pip install pycryptodomex (optional)
 atau
