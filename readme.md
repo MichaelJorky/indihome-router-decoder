@@ -35,7 +35,7 @@ python -m pip install selenium (wajib)
 atau
 python pip3 install selenium
 
-11. Pindahkan config.bin ke folder .zte-decoder
+11. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
 
 9. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
@@ -44,37 +44,37 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 ***** Just tried it on ZTE F670L V9.0 *****
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'Telkomdso123' config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'Telkomdso123' config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF config.bin config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF config/config.bin config/config.xml
 
-python decoder.py --model "F670L" --serial ZTE123456789 config.bin config.xml
+python decoder.py --model "F670L" --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --model "F670L" --key 'Telkomdso123' config.bin config.xml
+python decoder.py --model "F670L" --key 'Telkomdso123' config/config.bin config/config.xml
 
-python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --model "F670L" config.bin config.xml
+python decoder.py --model "F670L" config/config.bin config/config.xml
 
-python decoder.py --serial ZTE123456789 config.bin config.xml
+python decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --serial ZTE123456789 --key 'Telkomdso123' config.bin config.xml
+python decoder.py --serial ZTE123456789 --key 'Telkomdso123' config/config.bin config/config.xml
 
-python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config.bin config.xml
+python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --key 'Telkomdso123' config.bin config.xml
+python decoder.py --key 'Telkomdso123' config/config.bin config/config.xml
 
-python decoder.py --signature "F670L" config.bin config.xml
+python decoder.py --signature "F670L" config/config.bin config/config.xml
 
-python decoder.py config.bin config.xml
+python decoder.py config/config.bin config/config.xml
 
 
 ***** Just tried it on F609 V5.2 and ZTE F660 V6.0 *****
