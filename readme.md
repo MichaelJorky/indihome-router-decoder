@@ -18,22 +18,24 @@ git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 7. Instal pycryptodomex 
 python -m pip install pycryptodome (optional)
+dan
 python -m pip install pycryptodomex (optional)
 atau
 python pip3 install pycryptodome
+dan
 python pip3 install pycryptodomex
 
-8. Intsal setuptools
+9. Intsal setuptools
 python -m pip install setuptools (optional)
 atau
 python pip3 install setuptools
 
-9. Instal selenium
+10. Instal selenium
 python -m pip install selenium (wajib)
 atau
 python pip3 install selenium
 
-10. Pindahkan config.bin ke folder .zte-decoder
+11. Pindahkan config.bin ke folder .zte-decoder
 
 9. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
