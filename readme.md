@@ -7,7 +7,7 @@ Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config p
 Contoh Mac address: AA:BB:CC:DD:EE:FF
 Contoh serial number: ZTE123456789
 
-3. Download dan instal python3
+3. Download dan instal python3 (minimum python 3.5)
 https://www.python.org/downloads/
 
 4. Download dan instal Git
