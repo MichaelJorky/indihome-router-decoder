@@ -8,13 +8,13 @@ Contoh Mac address: AA:BB:CC:DD:EE:FF
 Contoh serial number: ZTE123456789
 
 3. Download dan instal python3
-https://www*python*org/downloads/ (tanda bintang ganti dengan titik)
+https://www.python.org/downloads/
 
 4. Download dan instal Git
-https://git-scm*com/downloads (tanda bintang ganti dengan titik)
+https://git-scm.com/downloads
 
 5. Jalankan Git CMD (run as administrator)
-git clone https://github*com/MichaelJorky/indihome-router-decoder .zte-decoder (tanda bintang ganti dengan titik)
+git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 6. Instal pycryptodomex 
 python -m pip install pycryptodome (optional)
@@ -41,18 +41,33 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial numbernya maupun mac addressnya
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config.bin config.xml
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'Telkomdso123' config.bin config.xml
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF config.bin config.xml
+
 python decoder.py --model "F670L" --serial ZTE123456789 config.bin config.xml
+
 python decoder.py --model "F670L" --key 'Telkomdso123' config.bin config.xml
+
 python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config.bin config.xml
+
 python decoder.py --model "F609" config.bin config.xml
+
 python decoder.py --serial ZTE123456789 config.bin config.xml
+
 python decoder.py --serial ZTE123456789 --key 'Telkomdso123' config.bin config.xml
+
 python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config.bin config.xml
+
 python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config.bin config.xml
+
 python decoder.py --key 'Telkomdso123' config.bin config.xml
+
 python decoder.py --signature "F609" config.bin config.xml
+
 python decoder.py config.bin config.xml
