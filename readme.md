@@ -1,22 +1,25 @@
 # indihome-router-decoder
 Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config pada router indihome
 
-1. Login ke router 192.168.1.1 menggunakan user user lalu backup confignya
+1. Login ke router via web browser misal ip routernya 192.168.1.1 lalu login menggunakan username: admin password: admin atau username: user password: user (tinggal disesuaikan untuk loginnya) lalu backup confignya
 
 2. Catat mac address dan serial number router
 Contoh Mac address: AA:BB:CC:DD:EE:FF
 Contoh serial number: ZTE123456789
+Contoh model: F670L
+Contoh signature: ZXHN F670L V9.0
+Contoh key: jjxx
 
-3. Download dan instal python3 (minimum python 3.5)
+4. Download dan instal python3 (minimum python 3.5)
 https://www.python.org/downloads/
 
-4. Download dan instal Git
+5. Download dan instal Git
 https://git-scm.com/downloads
 
-5. Jalankan Git CMD (run as administrator)
+6. Jalankan Git CMD (run as administrator)
 git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
-6. Instal pycryptodomex 
+7. Instal pycryptodomex 
 python -m pip install pycryptodome 
 dan
 python -m pip install pycryptodomex 
@@ -25,22 +28,22 @@ python pip3 install pycryptodome
 dan
 python pip3 install pycryptodomex
 
-7. Intsal setuptools
+8. Intsal setuptools
 python -m pip install setuptools 
 atau
 python pip3 install setuptools
 
-8. Instal selenium
+9. Instal selenium
 python -m pip install selenium 
 atau
 python pip3 install selenium
 
-9. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
+10. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
 
-10. Jalankan script python
+11. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
 
-11. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
+12. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
 ***** Just tried it on ZTE F670L V9.0 *****
 
