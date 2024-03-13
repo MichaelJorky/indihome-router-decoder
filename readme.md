@@ -58,7 +58,7 @@ python decoder.py --model "F670L" --key 'Telkomdso123' config.bin config.xml
 
 python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config.bin config.xml
 
-python decoder.py --model "F609" config.bin config.xml
+python decoder.py --model "F670L" config.bin config.xml
 
 python decoder.py --serial ZTE123456789 config.bin config.xml
 
@@ -70,6 +70,6 @@ python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config.bin 
 
 python decoder.py --key 'Telkomdso123' config.bin config.xml
 
-python decoder.py --signature "F609" config.bin config.xml
+python decoder.py --signature "F670L" config.bin config.xml
 
 python decoder.py config.bin config.xml
