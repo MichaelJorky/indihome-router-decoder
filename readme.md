@@ -38,7 +38,7 @@ python -m pip install selenium
 atau
 python pip3 install selenium
 
-10. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
+10. Pindahkan config.bin ke folder C:\Users\Nama_User\\.zte-decoder\config
 
 11. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
