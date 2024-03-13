@@ -16,7 +16,7 @@ https://git-scm.com/downloads
 5. Jalankan Git CMD (run as administrator)
 git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
-7. Instal pycryptodomex 
+6. Instal pycryptodomex 
 python -m pip install pycryptodome 
 dan
 python -m pip install pycryptodomex 
@@ -25,22 +25,22 @@ python pip3 install pycryptodome
 dan
 python pip3 install pycryptodomex
 
-9. Intsal setuptools
+7. Intsal setuptools
 python -m pip install setuptools 
 atau
 python pip3 install setuptools
 
-10. Instal selenium
+8. Instal selenium
 python -m pip install selenium 
 atau
 python pip3 install selenium
 
-11. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
+9. Pindahkan config.bin ke folder C:\Users\Nama_User\.zte-decoder\config
 
-9. Jalankan script python
+10. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
 
-10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
+11. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
 ***** Just tried it on ZTE F670L V9.0 *****
 
