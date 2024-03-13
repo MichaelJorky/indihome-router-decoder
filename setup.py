@@ -7,7 +7,7 @@ with open('readme.md') as f:
 setup(
     name='zcu',
     description='ZTE Decoder Utility',
-    long_description=redame,
+    long_description=readme,
     author='Dunia MR',
     author_email='wgalxczk3@mozmail.com',
     url='https://github.com/MichaelJorky/indihome-router-decoder',
