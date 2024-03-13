@@ -42,6 +42,8 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
+***** Just tried it on ZTE F670L V9.0 *****
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config.bin config.xml
@@ -73,3 +75,28 @@ python decoder.py --key 'Telkomdso123' config.bin config.xml
 python decoder.py --signature "F670L" config.bin config.xml
 
 python decoder.py config.bin config.xml
+
+
+***** Just tried it on F609 V5.2 and ZTE F660 V6.0 *****
+
+python uni_decoder.py --longpass '' config/config.bin config/config.xml
+
+python uni_decoder.py config/config.bin config/config.xml
+
+python uni_decoder.py --serial " " config/config.bin config/config.xml
+
+python uni_decoder.py --signature " " config/config.bin config/config.xml
+
+python uni_decoder.py --model " " config/config.bin config/config.xml
+
+python uni_decoder.py --mac AA:BB:CC:DD:EE:FF config/config.bin config/config.xml
+
+python uni_decoder.py --try-all-known-keys config/config.bin config/config.xml
+
+python uni_decoder.py --key 'Telkomdso123' config/config.bin config/config.xml
+
+python uni_decoder.py --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --model "F609" config/config.bin config/config.xml
+
+python uni_decoder.py --signature "ZTE F609 V5.2" config/config.bin config/config.xml
