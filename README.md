@@ -38,7 +38,7 @@ python pip3 install selenium
 9. Jalankan script python
 Buka git cmd lalu ketik perintah cd .zte-decoder
 
-10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial numbernya maupun mac addressnya
+10. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config.bin config.xml
 
