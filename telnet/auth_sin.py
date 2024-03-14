@@ -7,7 +7,6 @@ USERS = [
     "service",
     "supervisor",
     "guest",
-    "admin1",
     "administrator",
     "ubnt",
     "gepon",
