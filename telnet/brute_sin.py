@@ -10,7 +10,7 @@
 # run without arguments to see usage
 # Made for educational/authorized use.
 
-VER = "1.05"
+VER = "1.0.0"
 
 import os
 import sys
