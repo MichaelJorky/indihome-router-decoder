@@ -45,7 +45,7 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 12. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
-***** Just tried it on ZTE F670L V9.0 *****
+***** Baru di coba untuk ZTE F670L V9.0 *****
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
@@ -80,7 +80,7 @@ python decoder.py --signature "F670L" config/config.bin config/config.xml
 python decoder.py config/config.bin config/config.xml
 
 
-***** Just tried it on F609 V5.2 and ZTE F660 V6.0 *****
+***** Baru di coba untuk F609 V5.2 and ZTE F660 V6.0 *****
 
 python uni_decoder.py --longpass '' config/config.bin config/config.xml
 
