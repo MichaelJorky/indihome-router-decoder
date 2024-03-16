@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 '''
-Simple ftp brute force attack using  dictionary files for usernames and passwords
+Simple ftp brute force attack using dictionary files for usernames and passwords
     File name: brute_ftp.py
     Author: Dunia MR
     Date created: 15/03/2024
