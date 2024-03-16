@@ -6,7 +6,7 @@ Simple ftp brute force attack using  dictionary files for usernames and password
     Author: Dunia MR
     Date created: 15/03/2024
     Date created: 15/03/2024
-    Python Version: 1.0.0
+    Version: 1.0.0
 '''
 
 import re
