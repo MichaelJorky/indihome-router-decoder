@@ -80,7 +80,7 @@ python decoder.py --signature "F670L" config/config.bin config/config.xml
 python decoder.py config/config.bin config/config.xml
 
 
-***** Baru di coba untuk F609 V5.2 and ZTE F660 V6.0 *****
+***** Baru di coba untuk F609 V5.2 dan ZTE F660 V6.0 *****
 
 python uni_decoder.py --longpass '' config/config.bin config/config.xml
 
