@@ -45,7 +45,7 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 12. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 
-***** Baru di coba untuk ZTE F670L V9.0 *****
+***** Decoder untuk ZTE F670L V9.0 *****
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
@@ -53,13 +53,13 @@ python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config/config.bin conf
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'Telkomdso123' config/config.bin config/config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'jjww' config/config.bin config/config.xml
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF config/config.bin config/config.xml
 
 python decoder.py --model "F670L" --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --model "F670L" --key 'Telkomdso123' config/config.bin config/config.xml
+python decoder.py --model "F670L" --key 'jjww' config/config.bin config/config.xml
 
 python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
@@ -67,20 +67,20 @@ python decoder.py --model "F670L" config/config.bin config/config.xml
 
 python decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --serial ZTE123456789 --key 'Telkomdso123' config/config.bin config/config.xml
+python decoder.py --serial ZTE123456789 --key 'jjww' config/config.bin config/config.xml
 
 python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
 python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --key 'Telkomdso123' config/config.bin config/config.xml
+python decoder.py --key 'jjww' config/config.bin config/config.xml
 
 python decoder.py --signature "F670L" config/config.bin config/config.xml
 
 python decoder.py config/config.bin config/config.xml
 
 
-***** Baru di coba untuk F609 V5.2 dan ZTE F660 V6.0 *****
+***** Decoder untuk F609 V5.2, ZTE F660 V6.0 *****
 
 python uni_decoder.py --longpass '' config/config.bin config/config.xml
 
@@ -96,7 +96,7 @@ python uni_decoder.py --mac AA:BB:CC:DD:EE:FF config/config.bin config/config.xm
 
 python uni_decoder.py --try-all-known-keys config/config.bin config/config.xml
 
-python uni_decoder.py --key 'Telkomdso123' config/config.bin config/config.xml
+python uni_decoder.py --key 'jjww' config/config.bin config/config.xml
 
 python uni_decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
