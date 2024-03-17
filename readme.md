@@ -83,9 +83,9 @@ python decoder.py config/config.bin config/config.xml
 
 <b>***** Decoder baru di test untuk ZTE F609 V5.2, ZTE F660 V6.0 *****</b>
 
-python uni_decoder.py --longpass '' config/config.bin config/config.xml
-
 python uni_decoder.py config/config.bin config/config.xml
+
+python uni_decoder.py --longpass '' config/config.bin config/config.xml
 
 python uni_decoder.py --serial " " config/config.bin config/config.xml
 
@@ -123,3 +123,43 @@ python md5sum.py config/<name_file>
 python md5sum.py config/<name_file>.<type_file>
 
 python md5sum.py <folder_path>/<name_file>.<type_file>
+
+<b>***** Encoder baru di test untuk ZTE F609 V5.2, ZTE F660 V6.0 *****</b>
+
+python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 0 config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 2 config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 4 config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" --version 1 --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" --version 2 --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" --include-unencrypted-length --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" --use-signature-encryption config/config.xml config/new.config.bin
+
+python uni_encoder.py --signature "ZXHN F609 V5.2" --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --serial ZTE123456789 --signature "ZXHN F609 V5.2" config/config.xml config/new.config.bin
+
+python uni_encoder.py --serial ZTE123456789 --signature " " config/config.xml config/new.config.bin
+
+python uni_encoder.py --serial ZTE123456789 --model "F609" config/config.xml config/new.config.bin
+
+python uni_encoder.py --model "F609" config/config.xml config/new.config.bin
+
+python uni_encoder.py --include-header --version 1 config/config.xml config/new.config.bin
+
+python uni_encoder.py --include-header --version 2 config/config.xml config/new.config.bin
+
+python uni_encoder.py --include-header --include-unencrypted-length config/config.xml config/new.config.bin
+
+python uni_encoder.py --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --key 'jjxx' --signature 'ZXHN F609 V5.2' --include-header config/config.xml config/new.config.bin
+
+python uni_encoder.py --key 'jjxx' --signature 'ZXHN F609 V5.2' --version 1 --include-header config/config.xml config/new.config.bin
