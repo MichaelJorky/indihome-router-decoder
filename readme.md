@@ -80,7 +80,7 @@ python decoder.py --signature "F670L" config/config.bin config/config.xml
 python decoder.py config/config.bin config/config.xml
 
 
-***** Decoder untuk F609 V5.2, ZTE F660 V6.0 *****
+***** Decoder untuk ZTE F609 V5.2, ZTE F660 V6.0 *****
 
 python uni_decoder.py --longpass '' config/config.bin config/config.xml
 
@@ -102,7 +102,7 @@ python uni_decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
 python uni_decoder.py --model "F609" config/config.bin config/config.xml
 
-python uni_decoder.py --signature "ZTE F609 V5.2" config/config.bin config/config.xml
+python uni_decoder.py --signature "ZXHN F609 V5.2" config/config.bin config/config.xml
 
 
 ***** MD5 File Checksum *****
