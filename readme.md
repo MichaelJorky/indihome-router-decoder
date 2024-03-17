@@ -52,7 +52,7 @@ python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bi
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config/config.bin config/config.xml
 
-python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN_F670L_V9.0" config/config.bin config/config.xml
+python decoder.py --mac AA:BB:CC:DD:EE:FF --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --key 'jjww' config/config.bin config/config.xml
 
@@ -62,7 +62,7 @@ python decoder.py --model "F670L" --serial ZTE123456789 config/config.bin config
 
 python decoder.py --model "F670L" --key 'jjww' config/config.bin config/config.xml
 
-python decoder.py --model "F670L" --signature "ZXHN_F670L_V9.0" config/config.bin config/config.xml
+python decoder.py --model "F670L" --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
 python decoder.py --model "F670L" config/config.bin config/config.xml
 
@@ -70,9 +70,9 @@ python decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
 python decoder.py --serial ZTE123456789 --key 'jjww' config/config.bin config/config.xml
 
-python decoder.py --serial ZTE123456789 --signature "ZXHN_F670L_V9.0" config/config.bin config/config.xml
+python decoder.py --serial ZTE123456789 --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
-python decoder.py --key 'Telkomdso123' --signature "ZXHN_F670L_V9.0" config/config.bin config/config.xml
+python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 
 python decoder.py --key 'jjww' config/config.bin config/config.xml
 
@@ -103,7 +103,7 @@ python uni_decoder.py --serial ZTE123456789 config/config.bin config/config.xml
 
 python uni_decoder.py --model "F609" config/config.bin config/config.xml
 
-python uni_decoder.py --signature "ZXHN_F609_V5.2" config/config.bin config/config.xml
+python uni_decoder.py --signature "ZXHN F609 V5.2" config/config.bin config/config.xml
 
 
 ***** MD5 File Checksum *****
