@@ -106,7 +106,7 @@ python uni_decoder.py --model "F609" config/config.bin config/config.xml
 python uni_decoder.py --signature "ZXHN F609 V5.2" config/config.bin config/config.xml
 
 
-***** MD5 File Checksum *****
+<b>***** MD5 File Checksum *****</b>
 
 python md5sum.py config/config.bin
 
