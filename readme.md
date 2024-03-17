@@ -115,8 +115,8 @@ python md5sum.py config/<name_file>.iso
 
 python md5sum.py config/<name_file>.exe
 
-python md5sum.py config/<name_file>.<type_file>
-
 python md5sum.py config/<name_file>
+
+python md5sum.py config/<name_file>.<type_file>
 
 python md5sum.py <folder_path>/<name_file>.<type_file>
