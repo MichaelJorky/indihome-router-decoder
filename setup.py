@@ -1,12 +1,12 @@
 """setup.py module installer"""
 from setuptools import setup, find_packages
 
-with open('readme.md') as f:
+with open('README.md') as f:
     readme = f.read()
 
 setup(
     name='zcu',
-    description='ZTE Decoder Utility',
+    description='ZTE Decoder Encoder',
     long_description=readme,
     author='Dunia MR',
     author_email='wgalxczk3@mozmail.com',
