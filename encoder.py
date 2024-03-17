@@ -1,7 +1,11 @@
 """Encode config.xml into config.bin"""
+import os
+import sys
+import io
 import argparse
 from types import SimpleNamespace
 import zcu
+import linecache
 
 from zcu.xcryptors import Xcryptor, CBCXcryptor
 from zcu.known_keys import run_any_keygen
@@ -17,14 +21,22 @@ def main():
                         help='Output file, e.g. config.bin')
     parser.add_argument('--key', type=lambda x: x.encode(), default=b'',
                         help="Key for AES encryption")
-    parser.add_argument('--iv', type=lambda x: x.encode(), default=b'',
-                        help="IV for key derivation, switches encryption mode to AES256CBC")
+    parser.add_argument('--file', type=str, default='',
+                        help="file")
     parser.add_argument('--model', type=str, default='',
                         help="Generate Key/IV from model name, implies payload-type 3")
     parser.add_argument('--serial', type=str, default='',
                         help="Generate Key/IV from serial number(DIGImobil routers), implies payload-type 4")
+    parser.add_argument("--mac", type=str, default="",
+                        help="MAC address for TagParams-based key generation")
+    parser.add_argument("--longpass", type=str, default="",
+                        help="Long password from TagParams (entry 4100) for key generation")
     parser.add_argument('--signature', type=str, default='',
                         help='Signature string of device for signing, e.g "ZXHN H298N"')
+    parser.add_argument("--try-all-known-keys", action="store_true",
+                        help="Try decrypting with all known keys and generators (default No)")  
+    parser.add_argument('--iv', type=lambda x: x.encode(), default=b'',
+                        help="IV for key derivation, switches encryption mode to AES256CBC")
     parser.add_argument('--use-signature-encryption', action='store_true',
                         help='Generate Key/IV from signature, implies payload-type 4. Use this if you used --signature when decoding, or the output of the decoding script said "Using signature: <something>".')
     parser.add_argument('--chunk-size', type=int, default=65536,
@@ -55,11 +67,12 @@ def main():
     key = args.key
     iv = args.iv
     payload_type = args.payload_type
-
+    
     if args.model:
         payload_type = 3
         key = args.model
         iv = None
+        
     elif args.serial:
         payload_type = 4
         params = SimpleNamespace(signature = args.signature, serial = args.serial)
@@ -83,8 +96,9 @@ def main():
             print("Using key suffix: %s" % params.key_suffix)
         if args.iv_suffix:
             params.iv_suffix = args.iv_suffix if (args.iv_suffix != 'NONE') else ''
-            print("Using iv suffix: %s" % params.iv_suffix)
+            print("Using iv suffix: %s" % params.iv_suffix)     
         key, iv = run_any_keygen(params,'signature')[:2]
+
     elif args.iv:
         payload_type = 4
     elif args.key:
