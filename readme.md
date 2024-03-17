@@ -107,6 +107,8 @@ python uni_decoder.py --signature "ZTE F609 V5.2" config/config.bin config/confi
 
 ***** MD5 File Checksum *****
 
+python md5sum.py config/config.bin
+
 python md5sum.py config/<name_file>.bin
 
 python md5sum.py config/<name_file>.xml
