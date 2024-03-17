@@ -104,7 +104,9 @@ python uni_decoder.py --model "F609" config/config.bin config/config.xml
 
 python uni_decoder.py --signature "ZTE F609 V5.2" config/config.bin config/config.xml
 
+
 ***** MD5 File Checksum *****
+
 python md5sum.py config/<name_file>.bin
 
 python md5sum.py config/<name_file>.xml
