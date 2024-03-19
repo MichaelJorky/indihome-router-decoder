@@ -1,4 +1,6 @@
 """setup.py module installer"""
+from setuptools import setup, find_packages
+
 with open('README.md') as f:
     readme = f.read()
 with open('LICENSE') as f:
