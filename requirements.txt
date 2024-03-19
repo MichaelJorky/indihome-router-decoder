@@ -1,0 +1,10 @@
+setuptools
+pycryptodome
+pycryptodomex
+selenium
+requests
+impacket
+colorama
+pwn
+pwntools
+pstools
