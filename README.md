@@ -126,6 +126,12 @@ python md5sum.py <folder_path>/<name_file>.<type_file>
 
 <b>***** Encoder baru di test untuk ZTE F609 V5.2, ZTE F660 V6.0 *****</b>
 
+python uni_encoder.py --key-prefix CEFD1234567890123456 --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+
+python uni_encoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+
+python uni_encoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+
 python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 0 config/config.xml config/new.config.bin
 
 python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 2 config/config.xml config/new.config.bin
