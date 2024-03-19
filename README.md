@@ -30,6 +30,7 @@ cd .zte-decoder
 ```
 python setup.py install
 ```
+Contoh: ```python uni_decoder.py config/config.bin config/config.xml```
 #
 <b>***** Auto Install di Windows*****</b>
 
