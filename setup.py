@@ -10,7 +10,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='zcu',
-    description='ZTE Decoder Encoder',
+    description='Indihome ZTE Decoder Encoder',
     long_description=readme,
     author='Dunia MR',
     author_email='wgalxczk3@mozmail.com',
