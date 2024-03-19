@@ -4,9 +4,9 @@ Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config p
 <b>***** Auto Install *****</b>
 
 Kloning atau Download Repo/Folder ini
-
+```
 git clone https://github.com/MichaelJorky/indihome-router-decoder.git .zte-decoder
-
+```
 cd .zte-decoder
 
 python setup.py install
