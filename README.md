@@ -48,6 +48,12 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 <b>***** Decoder baru di test untuk ZTE F670L V9.0 *****</b>
 
+python decoder.py --key-prefix CEFD1234567890123456 --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+
+python decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+
+python decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --model "F670L" config/config.bin config/config.xml
