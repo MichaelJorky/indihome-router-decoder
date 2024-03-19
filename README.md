@@ -1,7 +1,35 @@
 # indihome-router-decoder
 Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config pada router indihome
 #
-<b>***** Android Termux *****</b>
+<b>***** Cara Install di Android Termux *****</b>
+
+```
+pkg install git
+```
+```
+pkg install python
+```
+```
+pkg upg
+```
+```
+pkg ins python
+```
+```
+pkg ins python-pip
+```
+```
+python -m pip install setuptools
+```
+```
+git clone https://github.com/MichaelJorky/indihome-router-decoder.git .zte-decoder
+```
+```
+cd .zte-decoder
+```
+```
+python setup.py install
+```
 #
 <b>***** Auto Install di Windows*****</b>
 
