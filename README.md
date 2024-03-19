@@ -1,7 +1,9 @@
 # indihome-router-decoder
 Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config pada router indihome
 #
-<b>***** Auto Install *****</b>
+<b>***** Android Termux *****</b>
+#
+<b>***** Auto Install di Windows*****</b>
 
 Kloning atau Download Repo/Folder ini
 ```
@@ -17,7 +19,7 @@ cd .zte-decoder
 python setup.py install
 ```
 #
-<b>***** Manual Install *****</b>
+<b>***** Manual Install di Windows *****</b>
 
 1. Login ke router via web browser misal ip routernya 192.168.1.1 lalu login menggunakan username: admin password: admin atau username: user password: user (tinggal disesuaikan untuk loginnya) lalu backup confignya
 
