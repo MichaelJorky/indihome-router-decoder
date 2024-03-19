@@ -11,6 +11,9 @@ git clone https://github.com/MichaelJorky/indihome-router-decoder.git .zte-decod
 cd .zte-decoder
 ```
 ```
+python -m pip install setuptools
+```
+```
 python setup.py install
 ```
 #
