@@ -19,73 +19,51 @@ python setup.py install
 1. Login ke router via web browser misal ip routernya 192.168.1.1 lalu login menggunakan username: admin password: admin atau username: user password: user (tinggal disesuaikan untuk loginnya) lalu backup confignya
 
 2. Catat mac address dan serial number router
-
 Contoh Mac address: AA:BB:CC:DD:EE:FF
-
 Contoh serial number: ZTE123456789
-
 Contoh model: F670L
-
 Contoh signature: ZXHN F670L V9.0
-
 Contoh key: jjxx
 
 4. Download dan instal python3 (minimum python 3.5)
-
 https://www.python.org/downloads/
 
 5. Download dan instal Git
-
 https://git-scm.com/downloads
 
 6. Jalankan Git CMD (run as administrator)
-
 git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 7. Instal pycryptodomex 
-
 python -m pip install pycryptodome 
-
 dan
-
 python -m pip install pycryptodomex 
-
 atau
-
 python pip3 install pycryptodome
-
 dan
-
 python pip3 install pycryptodomex
 
 8. Intsal setuptools
 
 python -m pip install setuptools 
-
 atau
-
 python pip3 install setuptools
 
 9. Instal selenium
 
 python -m pip install selenium 
-
 atau
-
 python pip3 install selenium
 
 10. Install Dependencies
 
 python -m pip install -r requirements.txt
-
 atau
-
 python pip3 install -r requirements.txt
 
 11. Pindahkan config.bin (config yang sudah di download pada step 1) ke folder C:\Users\Nama_User\\.zte-decoder\config
 
 12. Jalankan script python
-
 Buka git cmd lalu ketik perintah cd .zte-decoder
 
 13. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
