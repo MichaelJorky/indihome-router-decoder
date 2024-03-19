@@ -3,7 +3,7 @@ Indihome Router Decoder adalah Utilitas Sederhana untuk Mendecoder File Config p
 #
 <b>***** Cara Install di Android Termux *****</b>
 
-jalankan perintah ```apt update``` untuk memperbarui daftar paket (package) lalu jalankan perintah ```apt install termux-api termux-am``` yang dimana termux-api untuk mengakses berbagai fitur api dan termux-am bermanfaat untuk memberikan akses ke activity manager android, lalu jalankan perintah ```termux-setup-storage``` dan perintah ini bermanaat untuk memberikan akses ke penyimpanan perangkat anda, lalu jalankan perintah ```pkg install mc``` yang dimana perintah ini digunakan untuk menginstal Midnight Commander (mc) yang memungkinkan Anda untuk menjelajahi file dan direktori, mengelola file, mengompres dan mengekstrak arsip, dan melakukan berbagai tugas berkas lainnya dari antarmuka baris perintah, dan untuk membukanya cukup gunakan perintah ```mc```
+jalankan perintah ```apt update``` untuk memperbarui daftar paket (package) lalu jalankan perintah ```apt install termux-api termux-am``` yang dimana termux-api untuk mengakses berbagai fitur api dan termux-am bermanfaat untuk memberikan akses ke activity manager android, lalu jalankan perintah ```termux-setup-storage``` dan perintah ini bermanfaat untuk memberikan akses ke penyimpanan perangkat anda, lalu jalankan perintah ```pkg install mc``` yang dimana perintah ini digunakan untuk menginstal Midnight Commander (mc) yang memungkinkan Anda untuk menjelajahi file dan direktori, mengelola file, mengompres dan mengekstrak arsip, dan melakukan berbagai tugas berkas lainnya dari antarmuka baris perintah, dan untuk membukanya cukup gunakan perintah ```mc```
 ```
 pkg install git
 ```
