@@ -1,11 +1,10 @@
-"""Decode ZTE F670L V9.0"""
 import os
 import sys
-import io
+import io 
 import argparse
 from types import SimpleNamespace
 import zcu
-import linecache
+import linecache 
 
 from zcu.xcryptors import Xcryptor, CBCXcryptor
 from zcu.known_keys import serial_keygen, signature_keygen
@@ -13,11 +12,11 @@ from zcu.known_keys import serial_keygen, signature_keygen
 def main():
     """the main function"""
     parser = argparse.ArgumentParser(description="Decode config.bin from ZTE Routers",
-                                     formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("infile1", type=argparse.FileType("rb"),
-                        help="Encoded configuration file e.g. config.bin")
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)  
+    parser.add_argument("infile", type=argparse.FileType("rb"),
+                        help="Encoded configuration file e.g. config.bin")                          
     parser.add_argument("outfile", type=argparse.FileType("wb"),
-                        help="Output file e.g. config.xml")
+                        help="Output file e.g. config.xml")                  
     parser.add_argument("--key", type=lambda x: x.encode(), default=b"",
                         help="Key for AES decryption")
     parser.add_argument('--file', type=str, default='',
@@ -44,9 +43,9 @@ def main():
                         help="Override IV suffix for Signature based key generation")
     args = parser.parse_args()
 
-    infile1 = args.infile1
-    infile1.seek(145)  # Move the file cursor to the 145st bytes
-    remaining_data = infile1.read()  # Read the remaining content
+    infile = args.infile
+    infile.seek(145)  # Move the file cursor to the 145st bytes
+    remaining_data = infile.read()  # Read the remaining content
     
     infile = io.BytesIO(remaining_data)
     outfile = args.outfile
@@ -54,16 +53,17 @@ def main():
     zcu.zte.read_header(infile)
     signature = zcu.zte.read_signature(infile).decode()
     if signature:
-        print("Detected signature: %s" % signature)
+        print("Detected Signature: %s" % signature)
     payload_type = zcu.zte.read_payload_type(infile)
-    print("Detected payload type %d" % payload_type)
+    print("Detected Payload type %d" % payload_type)
     start_pos = infile.tell()
+
     params = SimpleNamespace()
     if args.signature:
         params.signature = args.signature
     else:
         params.signature = signature
-
+    
     if args.key:
         params.key = args.key
     if args.model:
@@ -75,11 +75,9 @@ def main():
     if args.longpass:
         params.longPass = args.longpass if (args.longpass != 'NONE') else ''
     if args.key_prefix:
-        params.key_prefix = args.key_prefix if (
-            args.key_prefix != 'NONE') else ''
+        params.key_prefix = args.key_prefix if (args.key_prefix != 'NONE') else ''
     if args.key_suffix:
-        params.key_suffix = args.key_suffix if (
-            args.key_suffix != 'NONE') else ''
+        params.key_suffix = args.key_suffix if (args.key_suffix != 'NONE') else ''
     if args.iv_prefix:
         params.iv_prefix = args.iv_prefix if (args.iv_prefix != 'NONE') else ''
     if args.iv_suffix:
@@ -95,24 +93,22 @@ def main():
             models.extend(zcu.known_keys.get_all_models())
 
         if not len(models):
-            error(
-                "No model argument specified for type 3 decryption and not trying all known keys!")
+            error("No Model Argument Specified For Type 3 Decryption And Not Trying All Known Keys!")
             return 1
 
         for model in models:
             if len(models) > 1:
-                print("Trying model name: %s" % model)
+                print("Trying Model Name: %s" % model)
             decryptor = CBCXcryptor(model)
             infile.seek(start_pos)
             decrypted = decryptor.decrypt(infile)
             if zcu.zte.read_payload_type(decrypted, raise_on_error=False) is not None:
-                matched = "model: '%s'" % model
+                matched = "Model: '%s'" % model
                 infile = decrypted
                 break
 
         if matched is None:
-            error(
-                "Failed to decrypt type 3 payload, tried %d model name(s)!" % len(models))
+            error("Failed To Decrypt Type 3 Payload, Tried %d Model Name(s)!" % len(models))
             return 1
     elif payload_type == 4:
         generated = []
@@ -124,8 +120,8 @@ def main():
                 generated.append(res)
 
         if not len(generated):
-            errStr = "No type 4 keygens matched the supplied/detected signature and parameters! Maybe adding --try-all-known-keys "
-            if not hasattr(params, 'serial'):
+            errStr = "No Type 4 Keygens Matched The Supplied/Detected Signature And Parameters! Maybe Adding --try-all-known-keys "
+            if not hasattr(params,'serial'):
                 errStr += "or --serial "
             errStr += "would work."
             error(errStr)
@@ -134,8 +130,7 @@ def main():
         for genkey in generated:
             key, iv, source = genkey
             if len(generated) > 1:
-                print("Trying key: '%s' iv: '%s' generated from %s" %
-                      (key, iv, source))
+                print("Trying Key: '%s' iv: '%s' Generated From %s" % (key, iv, source))
 
             decryptor = CBCXcryptor()
             decryptor.set_key(key, iv)
@@ -147,8 +142,7 @@ def main():
                 break
 
         if matched is None:
-            error("Failed to decrypt type 4 payload, tried %d generated key(s)!" % len(
-                generated))
+            error("Failed To Decrypt Type 4 Payload, Tried %d Generated Key(s)!" % len(generated))
             return 1
     elif payload_type == 2:
         keys = []
@@ -164,30 +158,29 @@ def main():
                     keys.append(key)
 
         if not len(keys):
-            error(
-                "No --key specified or found via signature, and not trying all known keys!")
+            error("No --Key Specified Or Found Via Signature, And Not Trying All Known Keys!")
             return 1
 
         for key in keys:
             if len(keys) > 1:
-                print("Trying key: %s" % key)
+                print("Trying Key: %s" % key)
 
             decryptor = Xcryptor(key)
             infile.seek(start_pos)
             decrypted = decryptor.decrypt(infile)
             if zcu.zte.read_payload_type(decrypted, raise_on_error=False) is not None:
-                matched = "key: '%s'" % key
+                matched = "Key: '%s'" % key
                 infile = decrypted
                 break
 
         if matched is None:
-            error("Failed to decrypt type 2 payload, tried %d key(s)!" % len(keys))
+            error("Failed To Decrypt Type 2 Payload, Tried %d Key(s)!" % len(keys))
             return 1
     elif payload_type == 5:
         if args.key is None or args.iv_prefix is None:
-            error("key, iv_prefix cannot be null" % len(generated))
+            error("Key, Iv_Prefix Cannot Be Null" % len(generated))
 
-        print("key_prefix: %s, iv_prefix: %s" %
+        print("Key_Prefix: %s, Iv_Prefix: %s" %
               (args.key_prefix, args.iv_prefix))
         decryptor = CBCXcryptor()
         decryptor.set_key(args.key_prefix, args.iv_prefix)
@@ -198,7 +191,7 @@ def main():
             infile = decrypted
 
         if matched is None:
-            error("Failed to decrypt type 5 payload, tried %d iv_prefix key(s)!" % len(
+            error("Failed To Decrypt Type 5 Payload, Tried %d Iv_Prefix Key(s)!" % len(
                 args.iv_prefix))
             return 1
     elif payload_type == 6:
@@ -208,29 +201,29 @@ def main():
         else:
             iv_prefix = args.iv_prefix
         if args.serial is None or args.mac is None:
-            error("serial: %s ,  mac cannot be null" % (args.serial, args.mac))
+            error("Serial: %s ,  Mac Cannot Be Null" % (args.serial, args.mac))
 
         #key_prefix = ZTEGD0123456+mac
         mac = args.mac
         if not isinstance(mac, bytes):
             mac = mac.strip().replace(':', '')
             if len(mac) != 12:
-                raise ValueError("MAC address string has wrong length")
+                raise ValueError("Mac Address String Has Wrong Length")
             mac = bytes.fromhex(mac)
         if len(mac) != 6:
-            raise ValueError("MAC address has wrong length")
+            raise ValueError("Mac Address Has Wrong Length")
         mac = "%02x%02x%02x%02x%02x%02x" % (
             mac[5], mac[4], mac[3], mac[2], mac[1], mac[0])
 
-        print("panjang serial %s" % len(args.serial))
+        print("Serial Number Length %s" % len(args.serial))
         if len(args.serial) == 12:
             kp1 = args.serial[4:]
         elif len(args.serial) == 19:
             kp1 = args.serial[11:]
         else:
-            raise ValueError("Serial number salah")
+            raise ValueError("Wrong Serial Number")
         kp = kp1 + mac
-        print(" mac: %s key_prefix: %s, iv_prefix: %s" % (mac, kp, iv_prefix))
+        print(" Mac: %s Key_Prefix: %s, Iv_Prefix: %s" % (mac, kp, iv_prefix))
         decryptor = CBCXcryptor()
         decryptor.set_key(kp, iv_prefix)
         infile.seek(start_pos)
@@ -240,29 +233,27 @@ def main():
             infile = decrypted
 
         if matched is None:
-            error("Failed to decrypt type 6 payload, tried %d iv_prefix key(s)!" % len(
+            error("Failed To Decrypt Type 6 Payload, Tried %D Iv_Prefix Key(s)!" % len(
                 args.iv_prefix))
             return 1
     elif payload_type == 0:
+        # no decryption required
         pass
     else:
-        error("Unknown payload type %d encountered!" % payload_type)
+        error("Unknown Payload type %d Encountered!" % payload_type)
         return 1
 
     res, _ = zcu.compression.decompress(infile)
     outfile.write(res.read())
 
     if matched is not None:
-        print("Successfully decoded using %s!" % matched)
+        print("Successfully Decoded Using %s!" % matched)
     else:
-        print("Successfully decoded!")
-
+        print("Successfully Decoded!")
     return 0
-
 
 def error(err):
     print(err, file=sys.stderr)
-
 
 if __name__ == "__main__":
     main()
