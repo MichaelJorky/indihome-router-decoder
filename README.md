@@ -1,17 +1,16 @@
 # indihome-router-decoder
 Indihome Router Decoder adalah utilitas sederhana untuk mendecoder file config pada router indihome
-
+#
 <b>***** Auto Install *****</b>
 
 Kloning atau Download Repo/Folder ini
 
-##
 git clone https://github.com/MichaelJorky/indihome-router-decoder.git .zte-decoder
 
 cd .zte-decoder
 
 python setup.py install
-
+#
 <b>***** Manual Install *****</b>
 
 1. Login ke router via web browser misal ip routernya 192.168.1.1 lalu login menggunakan username: admin password: admin atau username: user password: user (tinggal disesuaikan untuk loginnya) lalu backup confignya
