@@ -32,10 +32,12 @@ https://www.python.org/downloads/
 https://git-scm.com/downloads
 
 6. Jalankan Git CMD (run as administrator)
-git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
+
+   git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder
 
 7. Instal pycryptodomex 
-python -m pip install pycryptodome 
+
+   python -m pip install pycryptodome 
 dan
 python -m pip install pycryptodomex 
 atau
@@ -44,12 +46,14 @@ dan
 python pip3 install pycryptodomex
 
 8. Intsal setuptools
-python -m pip install setuptools 
+
+   python -m pip install setuptools 
 atau
 python pip3 install setuptools
 
 9. Instal selenium
-python -m pip install selenium 
+
+   python -m pip install selenium 
 atau
 python pip3 install selenium
 
