@@ -1,4 +1,3 @@
-setuptools
 pycryptodome
 pycryptodomex
 selenium
