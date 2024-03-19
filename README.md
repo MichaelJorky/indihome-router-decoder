@@ -44,20 +44,18 @@ dan
 python pip3 install pycryptodomex
 
 8. Intsal setuptools
-
 python -m pip install setuptools 
 atau
 python pip3 install setuptools
 
 9. Instal selenium
-
 python -m pip install selenium 
 atau
 python pip3 install selenium
 
 10. Install Dependencies
 
-python -m pip install -r requirements.txt
+    python -m pip install -r requirements.txt
 atau
 python pip3 install -r requirements.txt
 
