@@ -89,6 +89,21 @@ python decoder.py config/config.bin config/config.xml
 
 <b>***** Decoder baru di test untuk ZTE F609 V5.2, ZTE F660 V6.0 *****</b>
 
+
+python uni_decoder.py --key-prefix CEFD1234567890123456 --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --key-prefix CEFD1234567890123456 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+
+python uni_decoder.py --try-all-known-keys --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+
 python uni_decoder.py config/config.bin config/config.xml
 
 python uni_decoder.py --longpass '' config/config.bin config/config.xml
@@ -132,11 +147,11 @@ python md5sum.py <folder_path>/<name_file>.<type_file>
 
 <b>***** Encoder baru di test untuk ZTE F609 V5.2, ZTE F660 V6.0 *****</b>
 
-python uni_encoder.py --key-prefix CEFD1234567890123456 --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+python uni_encoder.py --key-prefix CEFD1234567890123456 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
-python uni_encoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+python uni_encoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
-python uni_encoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature F609L --serial ZTE123456789 config/config.xml config/new.config.bin
+python uni_encoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
 python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 0 config/config.xml config/new.config.bin
 
