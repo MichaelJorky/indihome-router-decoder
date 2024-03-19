@@ -50,9 +50,9 @@ Buka git cmd lalu ketik perintah cd .zte-decoder
 
 python decoder.py --key-prefix CEFD1234567890123456 --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+python decoder.py --key-suffix 14e1b600b1fd579f47433b88e8d85291 --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
-python decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+python decoder.py --iv-suffix 3acf16259def65456fc2a68ab5e10d96 --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
 python decoder.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 
@@ -94,13 +94,13 @@ python uni_decoder.py --key-prefix CEFD1234567890123456 --try-all-known-keys --s
 
 python uni_decoder.py --key-prefix CEFD1234567890123456 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
 
-python uni_decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
+python uni_decoder.py --key-suffix 14e1b600b1fd579f47433b88e8d85291 --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
 
-python uni_decoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+python uni_decoder.py --key-suffix 14e1b600b1fd579f47433b88e8d85291 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
 
-python uni_decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
+python uni_decoder.py --iv-suffix 3acf16259def65456fc2a68ab5e10d96 --try-all-known-keys --serial ZTE123456789 config/config.bin config/config.xml
 
-python uni_decoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
+python uni_decoder.py --iv-suffix 3acf16259def65456fc2a68ab5e10d96 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
 
 python uni_decoder.py --try-all-known-keys --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.bin config/config.xml
 
@@ -149,9 +149,9 @@ python md5sum.py <folder_path>/<name_file>.<type_file>
 
 python uni_encoder.py --key-prefix CEFD1234567890123456 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
-python uni_encoder.py --key-suffix 09v0n2vbbv92v592908801101nvnv1gg --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
+python uni_encoder.py --key-suffix 14e1b600b1fd579f47433b88e8d85291 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
-python uni_encoder.py --iv-suffix 347b429vn47vownow9oo9pqz00q8gyft --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
+python uni_encoder.py --iv-suffix 3acf16259def65456fc2a68ab5e10d96 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
 python uni_encoder.py --signature ZXHN F609 V5.2 --payload-type 0 config/config.xml config/new.config.bin
 
