@@ -105,7 +105,7 @@ Buka git cmd lalu ketik perintah ```cd .zte-decoder```
 
 13. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 #
-<b>***** ***** (Coming Soon) Auto Decoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450,ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q ***** *****</b>
+<b>***** ***** (Coming Soon) Auto Decoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q ***** *****</b>
 ```
 python auto_decoder.py config/config.bin config/config.xml
 
