@@ -17,5 +17,5 @@ setup(
     url='https://github.com/MichaelJorky/indihome-router-decoder',
     license=LICENSE,
     install_requires=REQUIRED,
-    packages=find_packages(exclude=('ftp', 'telnet'))
+    packages=find_packages(exclude=('ftp', 'telnet', 'ext'))
 )
