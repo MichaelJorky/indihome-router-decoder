@@ -1,5 +1,5 @@
 # indihome-router-decoder
-Indihome Router Decoder adalah Utilitas Sederhana untuk Mendecoder File Config pada Router ZTE indihome
+Indihome Router Decoder adalah Utilitas Sederhana untuk Mendecoder File Config pada Router Fiberhome, Huawei, dan ZTE indihome
 #
 <b>***** Cara Install di Android Termux *****</b>
 
