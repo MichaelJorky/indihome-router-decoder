@@ -217,7 +217,7 @@ python md5sum.py config/<name_file>.<type_file>
 python md5sum.py <folder_path>/<name_file>.<type_file>
 ```
 #
-<b>***** Decoder Works for ZTE F609, ZTE F660 *****</b>
+<b>***** Encoder Works for ZTE F609, ZTE F660 *****</b>
 ```
 python uni_encoder.py --key-prefix CEFD1234567890123456 --signature "ZXHN F609 V5.2" --serial ZTE123456789 config/config.xml config/new.config.bin
 
