@@ -1,4 +1,4 @@
-"""setup.py module installer"""
+"""Setup.py Module Installer"""
 from setuptools import setup, find_packages
 
 with open('README.md') as f:
