@@ -2,11 +2,7 @@
 
 import sys
 from io import BytesIO
-from hashlib import sha1
-from hashlib import sha224
 from hashlib import sha256
-from hashlib import sha384
-from hashlib import sha512
 from Cryptodome.Cipher import AES
 
 plain_key = ''
