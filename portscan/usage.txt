@@ -1,1 +1,9 @@
+python portscan/tcpscan.py
+Example:
+IP Address: 192.168.1.1
+Start Port:1
+End Port: 1000
 
+python portscan/multiscan.py
+Example:
+Enter Target: 192.168.1.1, bing.com, google.com, yandex.com
