@@ -1,2 +1,2 @@
-Ganti 192.168.1.1 dengan IP Router Agan atau Target Tujuan.
+Ganti 192.168.1.1 dengan IP Router Agan atau Target Tujuan
 python ftp/bruteftp.py -s 192.168.1.1 -p 21 -u ftp/usernames.txt -pass ftp/passwords.txt
