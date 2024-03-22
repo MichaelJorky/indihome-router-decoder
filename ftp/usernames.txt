@@ -10,6 +10,7 @@ Admin
 User
 Guest
 adtec
+devicehaecived
 instrument
 user
 default
