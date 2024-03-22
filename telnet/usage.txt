@@ -1,2 +1,2 @@
 Ganti 192.168.1.1 dengan IP Router Agan atau Target Tujuan
-python telnet/brutesin.py 192.168.1.1
+python telnet/brutelnet.py 192.168.1.1
