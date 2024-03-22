@@ -36,7 +36,8 @@ USERS = [
     "Guest",
     "adtec",
     "device",
-    "service"
+    "service",
+    ""
 ]
 
 PASSWORDS = [
@@ -51,6 +52,31 @@ PASSWORDS = [
     "telkom",
     "acs",
     "anicust",
+    "user1234",
+    "zep2kjzol",
+    "Telkomdso123",
+    "admintelecom",
+    "supportadmin",
+    "theworldinyourhand",
+    "%0|F?H@f!berhO3e",
+    "Qc!80ebor3#to#b",
+    "Dj9@t!n03g4r6#f",
+    "Pq@54r!e80w&q#u",
+    "Mn@lh4ink9#m",
+    "Yu9j#4a!rth#y",
+    "telkomjatineg4r4",
+    "Atr3gy!0n@l$to#e",
+    "Jq@yh4p0ur4#j",
+    "Siy!dho@r7o#s",
+    "Yu9j#4qa!rth",
+    "1g.4dm1n",
+    "unknown",
+    "aisadmin",
+    "tele1234",
+    "admintrue",
+    "fibre@dm!n",
+    "lnadmin",
+    "CUadmin",
     "lucenttech2",
     "ascend",
     "xxyyzz",
@@ -171,7 +197,6 @@ PASSWORDS = [
     "123456789a",
     "823477aA",
     "147258369",
-    "unknown",
     "98765",
     "q1w2e3r4",
     "232323",
@@ -474,5 +499,6 @@ PASSWORDS = [
     "kontol",
     "sukses",
     "bajingann",
-    "surabaya"
+    "surabaya",
+    ""
 ]
