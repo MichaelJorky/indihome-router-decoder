@@ -8,3 +8,4 @@ IPy
 pwn
 pwntools
 pstools
+telnetlib
