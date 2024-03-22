@@ -4,7 +4,7 @@
 # original (c) 2024 Dunia MR
 
 ### TELNET-BRUTE ###
-# Uses a set of usernames & passwords from auth_sin.py to obtain credentials to a telnet host.
+# Uses a set of usernames & passwords from authsin.py to obtain credentials to a telnet host.
 # ade, 2024
 #
 # run without arguments to see usage
@@ -20,7 +20,7 @@ import time
 import getopt
 import telnetlib
 
-from auth_sin import USERS, PASSWORDS
+from authsin import USERS, PASSWORDS
 
 LOGIN_PROMPT = b"login:"
 PWD_PROMPT = b"password:"
