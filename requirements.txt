@@ -4,6 +4,7 @@ selenium
 requests
 impacket
 colorama
+IPy
 pwn
 pwntools
 pstools
