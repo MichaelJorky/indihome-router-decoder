@@ -33,7 +33,7 @@ sysdiag
 wsupgrade
 pcfactory
 loader
-test:
+test
 webserver
 fdrusers
 PlcmSpIp
