@@ -129,7 +129,7 @@ python decoder.py --model "F670L" config/config.bin config/config.xml
 python decoder.py --serial ZTEGCEFD0000 config/config.bin config/config.xml
 python decoder.py --serial ZTEGCEFD0000 --key '2bf3525fd2dcc7fe' config/config.bin config/config.xml
 python decoder.py --serial ZTEGCEFD0000 --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
-python decoder.py --key 'Telkomdso123' --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
+python decoder.py --key '2bf3525fd2dcc7fe' --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 python decoder.py --key '2bf3525fd2dcc7fe' config/config.bin config/config.xml
 python decoder.py --signature "F670L" config/config.bin config/config.xml
 python decoder.py config/config.bin config/config.xml
