@@ -148,7 +148,7 @@ python unidecoder.py --model " " config/config.bin config/config.xml
 python unidecoder.py --mac 60:E5:D8:00:00:00 config/config.bin config/config.xml
 python unidecoder.py --try-all-known-keys config/config.bin config/config.xml
 python unidecoder.py --key '2bf3525fd2dcc7fe' config/config.bin config/config.xml
-python unidecoder.py --serial ZTE123456789 config/config.bin config/config.xml
+python unidecoder.py --serial ZTEGCEFD0000 config/config.bin config/config.xml
 python unidecoder.py --model "F670L" config/config.bin config/config.xml
 python unidecoder.py --signature "ZXHN F670L V9.0" config/config.bin config/config.xml
 ```
