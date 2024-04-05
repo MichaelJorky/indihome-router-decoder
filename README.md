@@ -70,7 +70,7 @@ https://git-scm.com/downloads
 
 6. Jalankan Git CMD (run as administrator):
 
-   ```git clone https://github.com/MichaelJorky/indihome-router-decoder .zte-decoder```
+   ```git clone https://github.com/MichaelJorky/indihome-router-decoder.git .zte-decoder```
 
 7. Instal pycryptodomex: 
 
