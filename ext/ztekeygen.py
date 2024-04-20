@@ -1,38 +1,38 @@
 #!/usr/bin/env python
-# Usage:
+# Penggunaan:
 # ./ext/ztekeygen.py
-# MAC address: 8d719f807123
+# Alamat MAC: 8d719f807123
 # Serial: ZTE123456789
-# Factory SSID: ZTE_2.4G_G22e7F
-# Factory WLAN Key: !@#$%12345
-# Factory Username: admin
-# Factory Password: Telkomdso123
-# Hardware Version: V9.0
-# Result: 0305ab0d9b90b918
+# SSID Pabrik: ZTE_2.4G_G22e7F
+# Kunci WLAN Pabrik: !@#$%12345
+# Nama Pengguna Pabrik: admin
+# Kata Sandi Pabrik: Telkomdso123
+# Versi Perangkat Keras: V9.0
+# Hasil: 0305ab0d9b90b918
 #
-# Example Decoder:
+# Contoh Pemecah:
 #
 # PYTHONPATH=./zte-decoder
-# python ./zte-decoder/unidecoder.py config/config.bin config/config.xml --key 0305ab0d9b90b918
+# python ./zte-decoder/decoder3.py config/config.bin config/config.xml --key 0305ab0d9b90b918
 #
-# Example Encoder:
+# Contoh Pemulai:
 #
 # PYTHONPATH=./zte-config-utility
-# python ./zte-decoder/uniencoder.py config/config.xml config/new.config.bin --key 0305ab0d9b90b918 --signature "F609"
+# python ./zte-decoder/encoder1.py config/config.xml config/new.config.bin --key 0305ab0d9b90b918 --signature "F609"
 
 from hashlib import md5
 
 l = lambda s: len(s).to_bytes(3, "little")
 a = lambda s: s.encode("ascii")
 
-mac      = int(input("MAC address: "), 16)
+mac      = int(input("Alamat MAC: "), 16)
 serial   = a(input("Serial: "))
-ssid     = a(input("Factory SSID: "))
-wlan_key = a(input("Factory WLAN Key: "))
-username = a(input("Factory Username: "))
-password = a(input("Factory Password: "))
+ssid     = a(input("SSID Pabrik: "))
+wlan_key = a(input("Kunci WLAN Pabrik: "))
+username = a(input("Nama Pengguna Pabrik: "))
+password = a(input("Kata Sandi Pabrik: "))
 mac_zte  = a("54BE53")
-version  = a(input("Hardware Version: "))
+version  = a(input("Versi Perangkat Keras: "))
 zero     = a("0")
 
 print(md5(

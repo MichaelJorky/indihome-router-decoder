@@ -1,17 +1,17 @@
-"""Compress config.xml into config.zlib"""
+"""Mengompres config.xml menjadi config.zlib"""
 import argparse
 
 import zcu
 
 
 def main():
-    """the main function"""
-    parser = argparse.ArgumentParser(description='Compress config.xml from ZTE Routers',
+    """fungsi utama"""
+    parser = argparse.ArgumentParser(description='Mengompres config.xml dari Router ZTE',
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('infile', type=argparse.FileType('rb'),
-                        help='Raw configuration file (config.xml)')
+                        help='File konfigurasi mentah (config.xml)')
     parser.add_argument('outfile', type=argparse.FileType('wb'),
-                        help='Output file (config.zlib)')
+                        help='File output (config.zlib)')
     args = parser.parse_args()
 
     infile = args.infile

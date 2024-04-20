@@ -1,11 +1,11 @@
-"""Extract info from config.bin"""
+"""Mengambil info dari config.bin"""
 import argparse
 
 import zcu
 
 
 def print_payload_info(infile):
-    """expects to be at the start of the payload magic"""
+    """berharap berada di awal dari magic payload"""
     zcu.zte.read_header(infile)
     signature = zcu.zte.read_signature(infile)
     payload_header = zcu.zte.read_payload(infile)
@@ -32,23 +32,23 @@ def print_payload_info(infile):
     payload_header_crc = payload_header[6]
 
     if len(signature) > 0:
-        print("Signature:         ", signature.decode('utf-8'))
+        print("Tanda Tangan:         ", signature.decode('utf-8'))
 
-    print("Payload Type:      ", payload_type, payload_type_friendly)
-    print("Payload Start:     ", payload_start)
-    print("Decompressed size: ", payload_length, "bytes")
-    print("2nd last chunk:    ", penultimate_chunk)
-    print("Chunk size:        ", payload_chunk_size, "bytes")
-    print("Payload CRC:       ", payload_crc)
-    print("Header CRC:        ", payload_header_crc)
+    print("Tipe Payload:      ", payload_type, payload_type_friendly)
+    print("Mulai Payload:     ", payload_start)
+    print("Ukuran Dekompresi: ", payload_length, "bytes")
+    print("Chunk kedua terakhir:    ", penultimate_chunk)
+    print("Ukuran Chunk:        ", payload_chunk_size, "bytes")
+    print("CRC Payload:       ", payload_crc)
+    print("CRC Header:        ", payload_header_crc)
 
 
 def main():
-    """the main function"""
-    parser = argparse.ArgumentParser(description='Read config.bin for ZTE Routers',
+    """fungsi utama"""
+    parser = argparse.ArgumentParser(description='Baca config.bin untuk Router ZTE',
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('infile', type=argparse.FileType('rb'),
-                        help='Raw configuration file (config.xml)')
+                        help='File konfigurasi mentah (config.xml)')
     args = parser.parse_args()
 
     print_payload_info(args.infile)

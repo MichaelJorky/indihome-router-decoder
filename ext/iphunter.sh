@@ -111,7 +111,7 @@ wan_req2=$(curl -s -b cookie.txt "${ipont}/?_type=menuData&_tag=wan_internetstat
 ###<Instance>
 ####...
 ####<ParaName>IPAddress</ParaName>
-####<ParaValue>108.137.165.4</ParaValue>
+####<ParaValue>36.36.36.36</ParaValue>
 ####..
 ###</Instance>
 ##</ID_WAN_COMFIG>

@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import sys
 from io import BytesIO
 from io import StringIO
@@ -8,7 +6,7 @@ from Cryptodome.Cipher import AES
 import zcu
 
 if len(sys.argv) != 2:
-    print("No filename given")
+    print("Tidak ada nama file yang diberikan")
     exit(0)
 else:
     decfile = sys.argv[1]
@@ -16,12 +14,12 @@ else:
 plain_key = ''
 plain_iv =  ''
 
-print("Plain Key : " + plain_key)
-print("Plain Iv  : " + plain_iv)
+print("Kunci Biasa : " + plain_key)
+print("IV Biasa    : " + plain_iv)
 key = sha256(plain_key.encode("utf8")).digest()
 iv = sha256(plain_iv.encode("utf8")).digest()
-print("SHA Key   : " + key.hex())
-print("SHA Iv    : " + iv.hex())
+print("SHA Kunci   : " + key.hex())
+print("SHA IV      : " + iv.hex())
 aes_cipher = AES.new(key[:32], AES.MODE_CBC, iv[:16])
 data = open(decfile,"rb")
 data.seek(72)

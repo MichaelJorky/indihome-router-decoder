@@ -1,15 +1,15 @@
-"""Extract signature text from config.bin"""
+"""Ekstrak teks tanda tangan dari config.bin"""
 import argparse
 
 import zcu
 
 
 def main():
-    """the main function"""
-    parser = argparse.ArgumentParser(description='Extract signature from config.bin of ZTE Routers',
+    """fungsi utama"""
+    parser = argparse.ArgumentParser(description='Ekstrak tanda tangan dari config.bin Router ZTE',
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('infile', type=argparse.FileType('rb'),
-                        help='Configuration file (config.bin)')
+                        help='File konfigurasi (config.bin)')
 
     args = parser.parse_args()
 
