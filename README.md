@@ -148,8 +148,8 @@ python encoder1.py --signature 'F670L' --use-signature-encryption config/config.
 ```
 <b>***** Contoh daftar lengkap perintah yang bisa digunakan untuk Encoder *****</b>
 ```
---key: jika terdeteksi di decoder silahkan gunakan kembali kombinasi kunci --key untuk encodernya
---signature: gunakan kembali tanda tangan untuk kombinasi encodernya, karena terkadang ada yang harus menggunakan --signature seperti ini F670L atau menggunakan versi lengkapnya seperti ini ZXHN F670L V9.0
+--key: jika terdeteksi di decoder silahkan gunakan kembali kombinasi kunci ini untuk encodernya
+--signature: gunakan kembali tanda tangan untuk kombinasi encodernya, karena terkadang ada yang harus menggunakan seperti ini F670L atau menggunakan versi lengkapnya seperti ini ZXHN F670L V9.0
 --payload-type: gunakan payload type yang terdeteksi di dekodernya
 --serial: gunakan serial number yang digunakan untuk decodernya
 
