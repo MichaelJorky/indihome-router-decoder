@@ -114,6 +114,9 @@ python decoder3.py config/config.bin config/config.xml
 python decoder1.py --model "F670L" config/config.bin config/config.xml
 python decoder2.py --model "F670L" config/config.bin config/config.xml
 python decoder3.py --model "F670L" config/config.bin config/config.xml
+python decoder1.py --try-all-known-keys config/config.bin config/config.xml
+python decoder2.py --try-all-known-keys config/config.bin config/config.xml
+python decoder3.py --try-all-known-keys config/config.bin config/config.xml
 python decoder1.py --serial ZTE123456789 config/config.bin config/config.xml
 python decoder2.py --serial ZTE123456789 config/config.bin config/config.xml
 python decoder3.py --serial ZTE123456789 config/config.bin config/config.xml
