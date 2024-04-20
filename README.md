@@ -145,10 +145,30 @@ python encoder1.py --signature F670L --payload-type 6 config/config.xml config/n
 python encoder1.py --model "F670L" config/config.xml config/new.config.bin
 python encoder1.py --serial ZTE123456789 --signature 'F670L' config/config.xml config/new.config.bin
 python encoder1.py --signature 'F670L' --use-signature-encryption config/config.xml config/new.config.bin
-
-Catatan:
+```
+<b>***** Contoh daftar lengkap perintah yang bisa digunakan untuk Encoder *****</b>
+```
 --key: jika terdeteksi di decoder silahkan gunakan kembali kombinasi kunci --key untuk encodernya
 --signature: gunakan kembali tanda tangan untuk kombinasi encodernya, karena terkadang ada yang harus menggunakan --signature seperti ini F670L atau menggunakan versi lengkapnya seperti ini ZXHN F670L V9.0
 --payload-type: gunakan payload type yang terdeteksi di dekodernya
 --serial: gunakan serial number yang digunakan untuk decodernya
+
+--key 2bf3525fd2dcc7fe
+--model F670L
+--serial ZTE123456789
+--mac AA:BB:CC:DD:EE:FF
+--longpass Telkomdso123
+--signature ZXHN F670L V9.0
+--iv {iv_key}
+--use-signature-encryption
+--chunk-size 65536
+--payload-type {0/1/2/3/4/5/6}
+--version {1/2}
+--include-header
+--little-endian-header
+--include-unencrypted-length
+--key-prefix CEFD0000000000174654
+--iv-prefix ZTE%FN$GponNJ025
+--key-suffix 574ffbb30a488a9e2d583a86719400a7
+--iv-suffix dedb7b84041d5f10bfe84bca2a165e39
 ```
