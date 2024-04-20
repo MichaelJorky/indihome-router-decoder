@@ -111,6 +111,12 @@ Buka git cmd lalu ketik perintah ```cd .zte-decoder```
 python decoder1.py config/config.bin config/config.xml
 python decoder2.py config/config.bin config/config.xml
 python decoder3.py config/config.bin config/config.xml
+python decoder1.py --model "F670L" config/config.bin config/config.xml
+python decoder2.py --model "F670L" config/config.bin config/config.xml
+python decoder3.py --model "F670L" config/config.bin config/config.xml
+python decoder1.py --serial ZTE123456789 config/config.bin config/config.xml
+python decoder2.py --serial ZTE123456789 config/config.bin config/config.xml
+python decoder3.py --serial ZTE123456789 config/config.bin config/config.xml
 python decoder1.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 python decoder2.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
