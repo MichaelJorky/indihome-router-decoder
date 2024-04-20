@@ -122,6 +122,21 @@ python decoder2.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.b
 python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 ```
 #
+<b>***** Contoh daftar lengkap perintah yang bisa digunakan untuk Decoder *****</b>
+```
+--key 2bf3525fd2dcc7fe
+--model F670L
+--serial ZTE123456789
+--mac AA:BB:CC:DD:EE:FF
+--longpass Telkomdso123
+--signature ZXHN F670L V9.0
+--key-prefix CEFD0000000000174654
+--iv-prefix ZTE%FN$GponNJ025
+--key-suffix 574ffbb30a488a9e2d583a86719400a7
+--iv-suffix dedb7b84041d5f10bfe84bca2a165e39
+--try-all-known-keys
+```
+#
 <b>***** Encoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q *****</b>
 ```
 python encoder1.py --key 'isi_key' --signature 'F670L' --include-header config/config.xml config/new.config.bin
