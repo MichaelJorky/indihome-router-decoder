@@ -1,4 +1,4 @@
-"""Compression and decompression helper functions"""
+"""Fungsi pembantu kompresi dan dekompresi"""
 
 import struct
 import zlib
@@ -8,14 +8,14 @@ from . import constants
 
 
 def decompress(infile):
-    """decompress a block, return data and crc
-    A 'block' consists of a 12 byte (3x4-byte INT) header and a ZLIB payload
+    """Mendekompresi sebuah blok, mengembalikan data dan crc
+    Sebuah 'blok' terdiri dari header 12 byte (3x4-byte INT) dan payload ZLIB
     HEADER
-        [XXXX] Decompressed length of block (bytes)
-        [XXXX] Compressed length of block (bytes)
-        [XXXX] 0 if last block else cumulative compressed blocks length
+        [XXXX] Panjang blok yang telah didekompresi (bytes)
+        [XXXX] Panjang blok yang terkompresi (bytes)
+        [XXXX] 0 jika blok terakhir selain itu kumulatif panjang blok terkompresi
     PAYLOAD
-        [....] ZLIB chunk
+        [....] Potongan ZLIB
     """
     decompressed_data = BytesIO()
     crc = 0
@@ -35,9 +35,9 @@ def decompress(infile):
 
 
 def compress_helper(infile, chunk_size):
-    """compression helper, consumes chunk_size segments of infile"""
-    # cumulative compressed length includes 60-byte payload header
-    # it is the cumulative amount of bytes compressed EXCLUDING the last block
+    """Fungsi pembantu kompresi, mengonsumsi segmen-segmen ukuran chunk_size dari infile"""
+    # panjang terkompresi kumulatif termasuk header payload 60-byte
+    # ini adalah jumlah kumulatif byte yang terkompresi TIDAK TERMASUK blok terakhir
     cumulative_compressed_length = 60
     total_uncompressed_length = 0
     crc = 0
@@ -76,38 +76,38 @@ def compress_helper(infile, chunk_size):
         'compressed_size': cumulative_compressed_length,
     }
 
-    if chunk_size < 65536: # want the full compressed size in header in some cases
+    if chunk_size < 65536: # ingin ukuran terkompresi penuh di header dalam beberapa kasus
         stats['compressed_size'] += len(compressed_chunk) + 12
 
     return (compressed_data, stats)
 
 
 def compress(infile, chunk_size):
-    """compress and add header
+    """Mengompres dan menambahkan header
 
-    A 'block' consists of a 60 byte (15x4-byte INT) header followed by
+    Sebuah 'blok' terdiri dari header 60 byte (15x4-byte INT) diikuti oleh
     >=1 PAYLOAD section(s).
 
     HEADER
-        [XXXX] Magic number '0x04030201'
-        [XXXX] Payload type, 0 = ZLIB
-        [XXXX] Total decompressed length
-        [XXXX] Cumulative compressed size* (*not always)
-        [XXXX] Decompressed chunk size
-        [XXXX] CRC of compressed data
-        [XXXX] CRC of first 24 bytes of the header
-        [XXXX....] 32 bytes of padding
+        [XXXX] Angka magis '0x04030201'
+        [XXXX] Tipe payload, 0 = ZLIB
+        [XXXX] Total panjang yang sudah didekompresi
+        [XXXX] Ukuran terkompresi kumulatif* (*tidak selalu)
+        [XXXX] Ukuran chunk yang telah didekompresi
+        [XXXX] CRC dari data terkompresi
+        [XXXX] CRC dari 24 byte pertama header
+        [XXXX....] 32 byte padding
     PAYLOAD
         HEADER
             12 byte header
         ZLIB
-            variable byte payload
+            payload byte variabel
     """
     compressed_data, stats = compress_helper(infile, chunk_size)
 
     header = struct.pack('>6I',
                          constants.PAYLOAD_MAGIC,
-                         0,  # no encryption, only zlib compression
+                         0,  # tidak ada enkripsi, hanya kompresi zlib
                          stats['uncompressed_size'],
                          stats['compressed_size'],
                          chunk_size,

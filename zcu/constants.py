@@ -1,5 +1,6 @@
-"""Magic number constants from ZTE routers"""
+"""Konstanta angka magis dari router ZTE"""
 
 PAYLOAD_MAGIC = 0x01020304
 SIGNATURE_MAGIC = 0x04030201
 ZTE_MAGIC = (0x99999999, 0x44444444, 0x55555555, 0xAAAAAAAA)
+

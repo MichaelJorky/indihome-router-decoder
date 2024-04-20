@@ -1,19 +1,19 @@
-"""Known encryption keys for ZTE router config.bin files"""
+"""Kunci enkripsi yang diketahui untuk file config.bin router ZTE"""
 
-# 1st element is the key, everything else is the start of the signature
+# Elemen pertama adalah kunci, yang lain adalah awal dari tanda tangan
 KNOWN_KEYS = {
     "MIK@0STzKpB%qJZe": ["zxhn h118n e"],
     "MIK@0STzKpB%qJZf": ["zxhn h118n v"],
     "402c38de39bed665": ["zxhn h267a"],
     "Q#Zxn*x3kVLc":     ["zxhn h168n v2"],
-    # due to bug, orig. is "Wj%2$CjM"
+    # karena bug, aslinya "Wj%2$CjM"
     "Wj":               ["zxhn h298n"],
     "m8@96&ZG3Nm7N&Iz": ["zxhn h298a"],
     "GrWM2Hz&LTvz&f^5": ["zxhn h108n"],
     "GrWM3Hz&LTvz&f^9": ["zxhn h168n v3", "zxhn h168n h"],
     "Renjx%2$CjM":      ["zxhn h208n", "zxv10 h201l"],
     "tHG@Ti&GVh@ql3XN": ["zxhn h267n"],
-    # not sure, might be related to H108N
+    # tidak yakin, mungkin terkait dengan H108N
     "SDEwOE5WMi41Uk9T": ["TODO"]
 }
 
@@ -41,10 +41,10 @@ def mac_to_str(mac):
     if not isinstance(mac, bytes):
         mac = mac.strip().replace(':','')
         if len(mac) != 12:
-            raise ValueError("MAC address string has wrong length")
+            raise ValueError("String alamat MAC memiliki panjang yang salah")
         mac = bytes.fromhex(mac)
     if len(mac) != 6:
-        raise ValueError("MAC address has wrong length")
+        raise ValueError("Alamat MAC memiliki panjang yang salah")
 
     return "%02x:%02x:%02x:%02x:%02x:%02x" % (mac[0], mac[1], mac[2], mac[3], mac[4], mac[5])
 
@@ -89,7 +89,7 @@ def signature_keygen(params, key_suffix='Key02721401', iv_suffix='Iv02721401'):
     except AttributeError:
         return ()
 
-# 1st element is the function generating the key, 2nd is array of possible matching signature starts
+# Elemen pertama adalah fungsi yang menghasilkan kunci, yang kedua adalah array awalan tanda tangan yang cocok
 KNOWN_KEYGENS = {
     (lambda p : tagparams_keygen(p)): ["H288A"],
     (lambda p : serial_keygen(p)): ["ZXHN H298A"],
@@ -128,11 +128,11 @@ def run_any_keygen(params, wanted):
     if keygened is not None:
         return keygened
 
-    #no match for signature found in keygens, find a generic keygen of wanted type and use that
+    # tidak ada kecocokan tanda tangan yang ditemukan dalam keygen, temukan keygen generik dari jenis yang diinginkan dan gunakan itu
     allgens = run_all_keygens(params)
     for gen in allgens:
         if gen[2].startswith(wanted):
             return gen
 
-    #should never get here as long as wanted is an existing type
+    # seharusnya tidak sampai ke sini selama wanted adalah tipe yang ada
     return None

@@ -6,9 +6,8 @@ from Cryptodome.Cipher import AES
 
 from zcu.constants import PAYLOAD_MAGIC
 
-
 class Xcryptor():
-    """Standard Type 2 encryption"""
+    """Enkripsi Tipe 2 Standar"""
     aes_cipher = None
     force_same_data_length = True
 
@@ -29,14 +28,14 @@ class Xcryptor():
         self.aes_cipher = AES.new(aes_key, AES.MODE_ECB)
 
     def read_chunks(self, infile):
-        """decrypt a block
-        A 'block' consists of a 12 byte (3x4-byte INT) header and an AES payload
+        """membaca blok yang terenkripsi
+        Sebuah 'blok' terdiri dari header 12 byte (3x4-byte INT) dan payload AES
         HEADER
-            [XXXX] Decrypted length
-            [XXXX] Encrypted length
+            [XXXX] Panjang terdekripsi
+            [XXXX] Panjang terenkripsi
             [XXXX] 0
         PAYLOAD
-            [....] ZLIB chunk
+            [....] Chunks ZLIB
         """
         encrypted_data = BytesIO()
         total_dec_size = 0
@@ -44,7 +43,7 @@ class Xcryptor():
             chunk_size, dec_size, more_chunks = struct.unpack(">3I", infile.read(12))
             encrypted_data.write(infile.read(chunk_size))
             total_dec_size += dec_size
-            if more_chunks == 0:  # "continue" flag not set
+            if more_chunks == 0:  # tanda "lanjut" tidak diatur
                 break
         encrypted_data.seek(total_dec_size)
         return encrypted_data
@@ -68,7 +67,7 @@ class Xcryptor():
         header = struct.pack(
             ">6I",
             PAYLOAD_MAGIC,
-            2,  # aes128 in ECB mode
+            2,  # aes128 dalam mode ECB
             unencrypted_length_to_use,
             self.encrypted_data_length + 60 + 12,
             self.chunk_size,
@@ -76,18 +75,18 @@ class Xcryptor():
         return header
 
     def encrypt(self, infile):
-        """encrypt and add header
+        """enkripsi dan tambahkan header
 
-        A 'block' consists of a 60 byte (15x4-byte INT) header followed by
-        a single PAYLOAD section.
+        Sebuah 'blok' terdiri dari header 60 byte (15x4-byte INT) diikuti oleh
+        satu PAYLOAD section.
 
         HEADER
-            [XXXX] Magic number '0x01020304'
-            [XXXX] Payload type, 2 = AES128ECB, 3 = AES256CBC(IV==Key), 4 = AES256CBC(IV!=Key)
-            [XXXX] Unencrypted length
-            [XXXX] 'block' size (including header)
-            [XXXX] Chunk size
-            [XXXX....] 40 bytes of padding
+            [XXXX] Nomor Sihir '0x01020304'
+            [XXXX] Tipe Payload, 2 = AES128ECB, 3 = AES256CBC(IV==Key), 4 = AES256CBC(IV!=Key)
+            [XXXX] Panjang tidak terenkripsi
+            [XXXX] ukuran 'blok' (termasuk header)
+            [XXXX] ukuran Chunks
+            [XXXX....] 40 byte padding
         PAYLOAD
             HEADER
                 12 byte header
@@ -100,7 +99,7 @@ class Xcryptor():
         unencrypted_data_length = len(data)
         self.unencrypted_data_length = unencrypted_data_length
 
-        # pad to 16 byte alignment
+        # diisi hingga perataan 16 byte
         if unencrypted_data_length % 16 > 0:
             data = data + (16 - unencrypted_data_length % 16)*b"\0"
 
@@ -112,9 +111,9 @@ class Xcryptor():
 
         result = BytesIO()
         result.write(header)
-        # 36 bytes of padding
+        # 36 byte padding
         result.write(struct.pack(">9I", *(9 * [0])))
-        # mini header for aes payload
+        # mini header untuk payload aes
         aes_header = struct.pack(
             ">3I",
             *(encrypted_data_length if self.force_same_data_length else unencrypted_data_length,
@@ -128,7 +127,7 @@ class Xcryptor():
 
 
 class CBCXcryptor(Xcryptor):
-    # type 3/4 encryption, AES256CBC with the key/IV set from SHA256 hashes
+    # enkripsi tipe 3/4, AES256CBC dengan kunci/IV yang ditetapkan dari hash SHA256
     force_same_data_length = False
     aes_key_str = None
     aes_iv_str = None
@@ -170,7 +169,7 @@ class CBCXcryptor(Xcryptor):
         header = struct.pack(
             ">6I",
             PAYLOAD_MAGIC,
-            3 if (self.aes_key_str == self.aes_iv_str) else 4,  # aes in CBC mode
+            3 if (self.aes_key_str == self.aes_iv_str) else 4,  # aes dalam mode CBC
             self.encrypted_data_length if self.include_unencrypted_length else 0,
             0,
             0,
