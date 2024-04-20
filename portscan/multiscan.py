@@ -1,13 +1,11 @@
-#!/usr/bin/python3
-
 import socket
 from IPy import IP
 
-print('''[#] Multi TCP Scan By Dunia MR [#]''')
+print('''[#] Pemindaian Multi TCP Oleh Dunia MR [#]''')
 
 def scan(target):
     converted_ip = check_ip(target)
-    print('\n' + '[Scanning Target] ' + str(target))
+    print('\n' + '[Memindai Target] ' + str(target))
     for port in range(1, 8500):
         scan_port(converted_ip, port)
 
@@ -31,14 +29,14 @@ def scan_port(ipaddress, port):
         sock.connect((ipaddress, port))
         try:
             banner = get_banner(sock)
-            print('[+] Open Port ' + str(port) + ' : ' + str(banner.decode().strip('\n')))
+            print('[+] Port Terbuka ' + str(port) + ' : ' + str(banner.decode().strip('\n')))
         except:
-            print('[+] Open Port ' + str(port)) 
+            print('[+] Port Terbuka ' + str(port)) 
     except:
         pass
 
 if __name__ == "__main__":
-    targets = input('[+] Enter Target(S) To Scan(Split Multiple Targets With ,): ')
+    targets = input('[+] Masukkan Target yang Akan Dipindai (Pisahkan Target yang Berbeda dengan Koma): ')
 
     if ',' in targets:
         for ip_add in targets.split(','):

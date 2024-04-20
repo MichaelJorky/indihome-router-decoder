@@ -1,22 +1,22 @@
 import socket
 import sys
 
-print('''[#] TCP Scan By Dunia MR [#]''')
+print('''[#] Pemindaian TCP Oleh Dunia MR [#]''')
 
 def scanHost(ip, startPort, endPort):
-    print('[-] Starting TCP Port Scan On Host %s' % ip)
-    # Begin TCP scan on host
+    print('[-] Memulai Pemindaian Port TCP Pada Host %s' % ip)
+    # Mulai pemindaian TCP pada host
     tcp_scan(ip, startPort, endPort)
-    print('[+] TCP Scan On Host %s Complete' % ip)
+    print('[+] Pemindaian TCP Pada Host %s Selesai' % ip)
 
 
 def scanRange(network, startPort, endPort):
-    print('[-] Starting TCP Port Scan On Network %s.0' % network)
+    print('[-] Memulai Pemindaian Port TCP Pada Jaringan %s.0' % network)
     for host in range(1, 255):
         ip = network + '.' + str(host)
         tcp_scan(ip, startPort, endPort)
 
-    print('[+] TCP Scan On Network %s.0 Complete' % network)
+    print('[+] Pemindaian TCP Pada Jaringan %s.0 Selesai' % network)
 
 
 def tcp_scan(ip, startPort, endPort):
@@ -24,7 +24,7 @@ def tcp_scan(ip, startPort, endPort):
         try:
             tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             if not tcp.connect_ex((ip, port)):
-                print('[+] %s:%d/TCP Open' % (ip, port))
+                print('[+] %s:%d/TCP Terbuka' % (ip, port))
                 tcp.close()
         except Exception:
             pass
@@ -32,10 +32,10 @@ def tcp_scan(ip, startPort, endPort):
 
 def main():
     socket.setdefaulttimeout(0.01)
-    network = input("[+] Ip Address: ")
-    startPort = int(input("[+] Start Port: "))
-    endPort = int(input("[+] End Port: "))
+    network = input("[+] Alamat IP: ")
+    startPort = int(input("[+] Port Awal: "))
+    endPort = int(input("[+] Port Akhir: "))
     scanHost(network, startPort, endPort)
 
 main()
-end = input("Press Any Key To Close")
+end = input("Tekan Apapun Untuk Menutup")
