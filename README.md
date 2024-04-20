@@ -111,7 +111,9 @@ Buka git cmd lalu ketik perintah ```cd .zte-decoder```
 python decoder1.py config/config.bin config/config.xml
 python decoder2.py config/config.bin config/config.xml
 python decoder3.py config/config.bin config/config.xml
-Dalam Tahap Perbaikan
+python decoder1.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+python decoder2.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
+python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 ```
 #
 <b>***** Encoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q *****</b>
