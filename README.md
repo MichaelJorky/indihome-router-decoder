@@ -124,5 +124,16 @@ python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.b
 #
 <b>***** Encoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q *****</b>
 ```
-Dalam Tahap Perbaikan
+python encoder1.py --key 'isi_key' --signature 'F670L' --include-header config/config.xml config/new.config.bin
+python encoder1.py --key 'isi_key' --signature 'F670L' --version 1 --include-header config/config.xml config/new.config.bin
+python encoder1.py --signature F670L --payload-type 6 config/config.xml config/new.config.bin 
+python encoder1.py --model "F670L" config/config.xml config/new.config.bin
+python encoder1.py --serial ZTE123456789 --signature 'F670L' config/config.xml config/new.config.bin
+python encoder1.py --signature 'F670L' --use-signature-encryption config/config.xml config/new.config.bin
+
+Catatan:
+--key: jika terdeteksi di decoder silahkan gunakan kembali kombinasi kunci --key untuk encodernya
+--signature: gunakan kembali tanda tangan untuk kombinasi encodernya, karena terkadang ada yang harus menggunakan --signature seperti ini F670L atau menggunakan versi lengkapnya seperti ini ZXHN F670L V9.0
+--payload-type: gunakan payload type yang terdeteksi di dekodernya
+--serial: gunakan serial number yang digunakan untuk decodernya
 ```
