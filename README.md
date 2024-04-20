@@ -33,7 +33,7 @@ cd .zte-decoder
 ```
 python setup.py install
 ```
-Contoh: ```python decoder1.py config/config.bin config/config.xml```
+Contoh: ```python decoder3.py config/config.bin config/config.xml```
 #
 <b>***** Auto Install di Windows*****</b>
 
