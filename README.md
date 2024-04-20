@@ -1,5 +1,5 @@
 # Indihome Decoder Utility
-Indihome Router Decoder Encoder adalah Utilitas Sederhana untuk Mendecoder File Config pada Router Fiberhome, Huawei, dan ZTE indihome
+Indihome Decoder Encoder Utility adalah Utilitas Sederhana untuk Mendecoder File Config pada Router Fiberhome, Huawei, dan ZTE indihome
 
 Rilis "Indihome Router Utility" versi aplikasi bisa cek disini https://github.com/MichaelJorky/Indihome-Router-Utility
 #
