@@ -81,7 +81,7 @@ atau
 dan
 ```python pip3 install pycryptodomex```
 
-8. Intsal setuptools:
+8. Instal setuptools:
 
    ```python -m pip install setuptools``` 
 atau
