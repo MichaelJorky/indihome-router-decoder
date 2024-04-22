@@ -93,7 +93,7 @@ atau
 atau
 ```python pip3 install selenium```
 
-10. Install Dependencies:
+10. Instal Dependencies:
 
     ```python -m pip install -r requirements.txt```
 atau
