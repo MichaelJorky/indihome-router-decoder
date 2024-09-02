@@ -6,7 +6,7 @@ Indihome Decoder Encoder Utility adalah Utilitas Sederhana untuk Mendecoder File
 
 Rilis "Indihome Router Utility" versi aplikasi bisa cek disini https://github.com/MichaelJorky/Indihome-Router-Utility
 #
-<b>***** Cara Install di Android Termux *****</b>
+<b>[ Cara Install di Android Termux ]</b>
 
 jalankan perintah ```apt update``` untuk memperbarui daftar paket (package) lalu jalankan perintah ```apt install termux-api termux-am``` yang dimana termux-api untuk mengakses berbagai fitur api dan termux-am bermanfaat untuk memberikan akses ke activity manager android, lalu jalankan perintah ```termux-setup-storage``` dan perintah ini bermanfaat untuk memberikan akses ke penyimpanan perangkat anda, untuk melihat path directory termux ketik perintah ```pwd```, lalu jalankan perintah ```pkg install mc``` yang dimana perintah ini digunakan untuk menginstal Midnight Commander (mc) yang memungkinkan Anda untuk menjelajahi file dan direktori, mengelola file, mengompres dan mengekstrak arsip, dan melakukan berbagai tugas berkas lainnya dari antarmuka baris perintah, dan untuk membukanya cukup gunakan perintah ```mc``` kemudian untuk membuka kembali tool zte decodernya jika aplikasi termux sudah ditutup cukup gunakan perintah ```cd .zte-decoder```
 ```
@@ -38,7 +38,7 @@ python setup.py install
 ```
 Contoh: ```python decoder3.py config/config.bin config/config.xml```
 #
-<b>***** Auto Install di Windows*****</b>
+<b>[ Auto Install di Windows ]</b>
 
 Kloning atau Download Repo/Folder ini
 ```
@@ -54,7 +54,7 @@ cd .zte-decoder
 python setup.py install
 ```
 #
-<b>***** Manual Install di Windows *****</b>
+<b>[ Manual Install di Windows ]</b>
 
 1. Login ke router via web browser misal ip routernya 192.168.1.1 lalu login menggunakan username: admin password: admin atau username: user password: user (tinggal disesuaikan untuk loginnya) lalu backup confignya
 
@@ -109,7 +109,7 @@ Buka git cmd lalu ketik perintah ```cd .zte-decoder```
 
 13. Lalu pasteukan salah satu kode dibawah ini dan jangan lupa ganti dulu untuk serial number, model, key, signature maupun mac addressnya
 #
-<b>***** Decoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q *****</b>
+<b>[ Decoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q ]</b>
 ```
 python decoder1.py config/config.bin config/config.xml
 python decoder2.py config/config.bin config/config.xml
@@ -125,7 +125,7 @@ python decoder2.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.b
 python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.bin config/config.xml
 ```
 #
-<b>***** Contoh daftar lengkap perintah yang bisa digunakan untuk Decoder *****</b>
+<b>[ Contoh daftar lengkap perintah yang bisa digunakan untuk Decoder ]</b>
 ```
 --key 2bf3525fd2dcc7fe
 --model F670L
@@ -140,7 +140,7 @@ python decoder3.py --mac AA:BB:CC:DD:EE:FF --serial ZTE123456789 config/config.b
 --try-all-known-keys
 ```
 #
-<b>***** Encoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q *****</b>
+<b>[ Encoder Works for ZTE F670L, ZTE F609, ZTE F660, ZTE F450, ZTE F460, ZTE MF283, ZTE F663, ZTE GM220, ZTE F600W, ZTE H108N, ZTE H168N, ZTE H267A, ZTE H298N, ZTE H201L, ZTE H298Q, ZTE H298A,ZTE H268Q ]</b>
 ```
 python encoder1.py --key 'isi_key' --signature 'F670L' --include-header config/config.xml config/new.config.bin
 python encoder1.py --key 'isi_key' --signature 'F670L' --version 1 --include-header config/config.xml config/new.config.bin
@@ -149,7 +149,7 @@ python encoder1.py --model "F670L" config/config.xml config/new.config.bin
 python encoder1.py --serial ZTE123456789 --signature 'F670L' config/config.xml config/new.config.bin
 python encoder1.py --signature 'F670L' --use-signature-encryption config/config.xml config/new.config.bin
 ```
-<b>***** Contoh daftar lengkap perintah yang bisa digunakan untuk Encoder *****</b>
+<b>[ Contoh daftar lengkap perintah yang bisa digunakan untuk Encoder ]</b>
 ```
 --key: jika terdeteksi di decoder silahkan gunakan kembali kombinasi kunci ini untuk encodernya
 --signature: gunakan kembali tanda tangan untuk kombinasi encodernya, karena terkadang ada yang harus menggunakan seperti ini F670L atau menggunakan versi lengkapnya seperti ini ZXHN F670L V9.0
