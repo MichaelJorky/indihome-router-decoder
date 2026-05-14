@@ -123,6 +123,21 @@ def run_all_keygens(params):
 
     return outArr
 
+# Kunci hardcoded untuk payload type 5 (key/IV per tanda tangan model)
+KNOWN_TYPE5_KEYS = {
+    "F670": ("L04&Product@5A238dc79b15726d5c06", "ZTE%FN$GponNJ025678b02a85c63c706"),
+}
+
+
+def find_type5_key(signature):
+    """Cari key dan IV untuk payload type 5 berdasarkan tanda tangan model."""
+    sig = signature.strip()
+    for model, (key, iv) in KNOWN_TYPE5_KEYS.items():
+        if sig.upper().startswith(model.upper()):
+            return (key, iv)
+    return None
+
+
 def run_any_keygen(params, wanted):
     keygened = run_keygen(params)
     if keygened is not None:
